@@ -613,5 +613,169 @@
         "maximum_gap": 2.2900763358778624
       }
     }
+  },
+  {
+    "case": "B3-C2",
+    "N": 4,
+    "minimum": 207,
+    "query_budget": 16,
+    "dp_seconds_median": 9.505002526566386e-05,
+    "methods": {
+      "random": {
+        "success": 98,
+        "n": 100,
+        "ci95": [
+          0.929988209271456,
+          0.9944980324498376
+        ],
+        "median_gap": 0.0,
+        "maximum_gap": 53.62318840579711,
+        "median_seconds": 0.0002970000496134162
+      },
+      "coordinate": {
+        "success": 100,
+        "n": 100,
+        "ci95": [
+          0.9630065017930143,
+          1.0
+        ],
+        "median_gap": 0.0,
+        "maximum_gap": 0.0,
+        "median_seconds": 0.0003237500204704702
+      },
+      "quantum_reference": {
+        "success": 99,
+        "n": 100,
+        "ci95": [
+          0.9455138038212946,
+          0.9982325679358593
+        ],
+        "median_gap": 0.0,
+        "maximum_gap": 53.62318840579711
+      }
+    }
+  },
+  {
+    "case": "RC3-C2",
+    "N": 4,
+    "minimum": 53,
+    "query_budget": 16,
+    "dp_seconds_median": 5.954998778179288e-05,
+    "methods": {
+      "random": {
+        "success": 100,
+        "n": 100,
+        "ci95": [
+          0.9630065017930143,
+          1.0
+        ],
+        "median_gap": 0.0,
+        "maximum_gap": 0.0,
+        "median_seconds": 0.0002991499495692551
+      },
+      "coordinate": {
+        "success": 100,
+        "n": 100,
+        "ci95": [
+          0.9630065017930143,
+          1.0
+        ],
+        "median_gap": 0.0,
+        "maximum_gap": 0.0,
+        "median_seconds": 0.0003212000010535121
+      },
+      "quantum_reference": {
+        "success": 100,
+        "n": 100,
+        "ci95": [
+          0.9630065017930143,
+          1.0
+        ],
+        "median_gap": 0.0,
+        "maximum_gap": 0.0
+      }
+    }
+  },
+  {
+    "case": "RC3-C4",
+    "N": 16,
+    "minimum": 53,
+    "query_budget": 32,
+    "dp_seconds_median": 7.829995593056083e-05,
+    "methods": {
+      "random": {
+        "success": 86,
+        "n": 100,
+        "ci95": [
+          0.7786281178903616,
+          0.9147365634006086
+        ],
+        "median_gap": 0.0,
+        "maximum_gap": 33.9622641509434,
+        "median_seconds": 0.0005998999695293605
+      },
+      "coordinate": {
+        "success": 99,
+        "n": 100,
+        "ci95": [
+          0.9455138038212946,
+          0.9982325679358593
+        ],
+        "median_gap": 0.0,
+        "maximum_gap": 37.735849056603776,
+        "median_seconds": 0.0005669000092893839
+      },
+      "quantum_reference": {
+        "success": 99,
+        "n": 100,
+        "ci95": [
+          0.9455138038212946,
+          0.9982325679358593
+        ],
+        "median_gap": 0.0,
+        "maximum_gap": 9.433962264150944
+      }
+    }
+  },
+  {
+    "case": "RC3-1",
+    "N": 64,
+    "minimum": 53,
+    "query_budget": 64,
+    "dp_seconds_median": 0.00015175004955381155,
+    "methods": {
+      "random": {
+        "success": 54,
+        "n": 100,
+        "ci95": [
+          0.44264860323368227,
+          0.6343919169097589
+        ],
+        "median_gap": 0.0,
+        "maximum_gap": 9.433962264150944,
+        "median_seconds": 0.0012458999990485609
+      },
+      "coordinate": {
+        "success": 78,
+        "n": 100,
+        "ci95": [
+          0.6892964648501421,
+          0.8499871761539459
+        ],
+        "median_gap": 0.0,
+        "maximum_gap": 7.547169811320755,
+        "median_seconds": 0.0010783499456010759
+      },
+      "quantum_reference": {
+        "success": 97,
+        "n": 100,
+        "ci95": [
+          0.9154806357094724,
+          0.9897454759759611
+        ],
+        "median_gap": 0.0,
+        "maximum_gap": 3.7735849056603774
+      }
+    }
   }
 ]

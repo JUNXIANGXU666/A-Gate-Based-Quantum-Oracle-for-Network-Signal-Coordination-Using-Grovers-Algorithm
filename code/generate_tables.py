@@ -22,6 +22,7 @@ def span(v):
 
 
 def main():
+    OUT.mkdir(exist_ok=True)
     hardware=json.loads((ROOT/'results/statistics/hardware.json').read_text())
     sequence=[('B3-C2','reversible'),('B3-C4','reversible')]+[(f'B{i}-C4','compiled') for i in range(3,7)]
     data=[next(v for v in hardware['summary'] if (v['case'],v['route'])==k) for k in sequence]
@@ -85,6 +86,9 @@ def main():
         'Quantity & Median & Minimum & Maximum',rows,
         r'Qubit statistics cover the union of active physical qubits. CZ statistics cover calibrated pairs within that union, including pairs not necessarily traversed by every circuit. Repeated property snapshots may contain the same calibration values.'),encoding='utf-8')
     print('Generated evidence tables. Calibration:',stats)
+    if (ROOT/'results/statistics/traffic_complete.json').exists():
+        from extension_tables import main as supplementary_tables
+        supplementary_tables()
 
 
 if __name__=='__main__':

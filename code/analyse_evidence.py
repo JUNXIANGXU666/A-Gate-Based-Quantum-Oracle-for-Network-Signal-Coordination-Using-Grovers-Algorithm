@@ -31,7 +31,10 @@ def wilson(success, total):
 def main():
     out = ROOT/'results/statistics'
     out.mkdir(exist_ok=True)
-    pq = json.loads((ROOT/'results/pointq_v2/all_results.json').read_text())
+    pq_path = ROOT/'results/pointq_extended/combined_results.json'
+    if not pq_path.exists():
+        pq_path = ROOT/'results/pointq_v2/all_results.json'
+    pq = json.loads(pq_path.read_text())
     traffic = []
     for case in sorted({v['case'] for v in pq}):
         for baseline in ('synchronised', 'progression'):
@@ -45,7 +48,10 @@ def main():
                                 difference={k:interval([p[k] for p in pairs]) for k in pairs[0]}))
     (out/'traffic_paired.json').write_text(json.dumps(traffic,indent=2),encoding='utf-8')
 
-    comparisons = json.loads((ROOT/'results/optimisation/all_results.json').read_text())
+    comparison_path = ROOT/'results/optimisation_extended/combined_results.json'
+    if not comparison_path.exists():
+        comparison_path = ROOT/'results/optimisation/all_results.json'
+    comparisons = json.loads(comparison_path.read_text())
     opt = []
     for r in comparisons:
         item = {k:r[k] for k in ('case','N','minimum','query_budget','dp_seconds_median')}

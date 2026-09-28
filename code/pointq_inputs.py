@@ -23,7 +23,8 @@ def generate(scenario: Scenario, offsets, folder: Path, stochastic=True, capacit
     next_id = 1
     edge_map = {(edge["i"], edge["j"]): edge for edge in scenario.links()}
     routes = list(scenario.routes())
-    routes.extend([([i], 0.07*scenario.load, "cross") for i in range(scenario.n)])
+    rates = scenario.cross_rates if scenario.cross_rates is not None else [0.07]*scenario.n
+    routes.extend([([i], rates[i]*scenario.load, "cross") for i in range(scenario.n)])
     for route, flow, direction in routes:
         ids = []
         for a, b in zip([-1]+route, route+[-1]):

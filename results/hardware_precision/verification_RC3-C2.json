@@ -1,0 +1,58 @@
+{
+  "case": "RC3-C2-eta8",
+  "N": 4,
+  "thresholds": [
+    6,
+    7,
+    11
+  ],
+  "sum_basis_checks": 4,
+  "bit_phase_basis_checks": 24,
+  "errors": {
+    "sum": 5.911459383137438e-16,
+    "bit": 1.2297313187159647e-15,
+    "phase": 1.2297313187159647e-15
+  },
+  "amplification": [
+    {
+      "K": 7,
+      "k": 0,
+      "alpha": 0.25,
+      "observed": 0.2500000000000001,
+      "ideal": 0.25,
+      "workspace_leakage": 0.0
+    },
+    {
+      "K": 7,
+      "k": 1,
+      "alpha": 0.25,
+      "observed": 1.0000000000000018,
+      "ideal": 1.0,
+      "workspace_leakage": 8.317699102846773e-32
+    },
+    {
+      "K": 7,
+      "k": 2,
+      "alpha": 0.25,
+      "observed": 0.250000000000001,
+      "ideal": 0.24999999999999956,
+      "workspace_leakage": 1.1177957745787818e-31
+    },
+    {
+      "K": 7,
+      "k": 3,
+      "alpha": 0.25,
+      "observed": 0.25000000000000155,
+      "ideal": 0.2500000000000001,
+      "workspace_leakage": 1.8786231125699278e-31
+    }
+  ],
+  "wall_seconds": 0.8108406999381259,
+  "resources": {
+    "offset_qubits": 2,
+    "sum_qubits": 3,
+    "base": 7,
+    "divisor": 1,
+    "sum_bound": 4
+  }
+}

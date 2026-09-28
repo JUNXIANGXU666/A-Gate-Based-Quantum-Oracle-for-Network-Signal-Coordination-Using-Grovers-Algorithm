@@ -2,49 +2,55 @@
 
 Scientific code and experimental records for the study by Vinayak Dixit, Junxiang Xu and Richard Pech.
 
-The construction evaluates queue-based link costs, adds them reversibly, compares the network cost with a prescribed limit and marks feasible signal offsets. Classical comparisons, PointQ traffic simulations and IBM hardware measurements have distinct roles in the evaluation.
+The construction evaluates queue-based link costs, adds them reversibly, compares the network cost with a prescribed limit and marks feasible signal offsets. Classical optimisation, PointQ traffic simulation and IBM hardware measurements have distinct evidentiary roles.
 
 ## Contents
 
 | Directory | Contents |
 | --- | --- |
-| `code/` | Queue tables, exact and budgeted optimisation, reversible and compiled quantum circuits, statistics and plotting |
-| `scripts/` | PointQ execution wrapper, dependency setup and archive checks |
-| `results/model/` | Nineteen finite traffic instances, all link tables and exact enumeration |
-| `results/pointq_v2/` | The 288 formal PointQ results, paired-arrival hashes, sampled queue series and event-file provenance |
-| `results/optimisation/` | Fifteen instances with 100 runs per budgeted method |
-| `results/quantum/` | Gate-level correctness and noiseless amplification records |
-| `results/hardware/` | Raw shot counts, native circuits, resource records and device calibration snapshots |
-| `results/statistics/` | Derived comparisons, intervals and calibration summaries |
+| `code/` | Queue models, optimisation, reversible and compiled circuits, statistics and figures |
+| `scripts/` | PointQ execution wrapper, source setup and offline archive checks |
+| `results/model/` | Nineteen controlled table instances and exact enumeration |
+| `results/resco/` | Six mapped corridor table instances, source provenance and road geometry |
+| `results/traffic_extension/` | Sixteen scenarios, all five plans, release profiles and update histories |
+| `results/pointq_v2/` | The initial 288 PointQ runs and event-file provenance |
+| `results/pointq_extended/` | The additional 352 runs and combined 640-run evidence |
+| `results/optimisation/` | Initial fifteen-instance comparisons, 100 repetitions per method |
+| `results/optimisation_extended/` | Four additional comparisons and combined nineteen-instance results |
+| `results/quantum/` | Fine-cost circuit correctness and noiseless amplification |
+| `results/hardware/` | Main IBM comparison: counts, native circuits, layouts and calibration |
+| `results/hardware_precision/` | Coarse-cost full-oracle diagnostics and their validation |
+| `results/statistics/` | Derived traffic, optimisation and hardware summaries |
 
-`MANIFEST.json` identifies the released files by SHA-256. The original large PointQ event logs are not distributed here. Their hashes, input generation and measurement code are provided so that the traffic simulations can be rerun. No third-party simulator source is redistributed.
+`MANIFEST.json` identifies the released files by SHA-256. Large PointQ event logs are not distributed. Their hashes, input generation and measurement code support independent reruns. No third-party simulator or benchmark source is redistributed.
 
 ## Environment
 
-The experiments used Python 3.11.9. Install the pinned dependencies in a separate Python environment:
+The experiments used Python 3.11.9. Install dependencies in a separate environment:
 
 ```sh
 python -m pip install -r requirements.txt
 ```
 
-Arial must be installed to reproduce the exact figure typography. The plotting script stops if Arial is unavailable, rather than silently changing fonts. Windows was used for the reported timings. Runtime comparisons on another computer need not reproduce those timings.
+Arial is required for exact figure typography. The plotting script stops when Arial is unavailable. Reported classical timings were measured on Windows and need not match another computer.
 
-## Check the Archived Evidence
+## Reproduce the Archived Results
 
-These commands run locally and do not submit quantum jobs:
+These commands use archived evidence and do not contact IBM or submit quantum jobs:
 
 ```sh
 python scripts/check_archive.py
 python code/analyse_evidence.py
+python code/extension_statistics.py
 python code/generate_tables.py
 python code/publication_figures.py
 ```
 
-The first command checks file hashes, exact costs, common-arrival pairing, hardware counts and archived verification records. Subsequent commands regenerate numerical summaries, LaTeX tables and seven PDF/PNG figures. Generated artwork and tables appear in `manuscript/`. That directory is an output location, not a copy of the article.
+The checks verify hashes, all 25 stored table minima, pairing and vehicle conservation in 640 simulations, nineteen optimisation cases, 204 hardware records and 228 circuit basis tests. Generated LaTeX tables and nine PDF/PNG figures appear in `manuscript/`. This is an output directory, not a copy of the article. The nineteen optimisation cases are a selected subset of the 25 stored demand/resolution instances.
 
-## Rerun the Computations
+## Recompute Models and Optimisation
 
-Work on a separate copy to preserve the released results. Queue tables and optimisation comparisons can be regenerated with:
+Use a separate working copy to preserve the archive. The controlled tables and initial comparisons are generated by:
 
 ```sh
 python code/traffic_model.py
@@ -52,46 +58,61 @@ python code/optimisation_experiments.py
 python code/verify_quantum.py
 ```
 
-`verify_quantum.py` executes the actual reversible gates. The reported 172 basis checks comprise 20 cost-accumulation tests and 152 bit/phase tests. The bit tests initialise the flag at zero. Grover statevector tests are recorded separately.
+The mapped cases and additional plans use the pinned benchmark source:
 
-The adaptive Grover comparisons in `optimisation_experiments.py` sample ideal measurement probabilities. They are not hardware optimisation runs and do not establish a wall-clock speedup. Dynamic programming exploits the tested path and ring structure and provides an exact classical reference.
+```sh
+python scripts/setup_resco.py
+python code/extract_resco.py
+python code/propagation_experiments.py
+python code/optimisation_extension.py
+```
+
+The last two scripts retain existing per-case results. In a fresh calculation copy, omit their archived per-case JSON files to recompute them. The adaptive Grover comparison samples ideal measurement probabilities. It is not a hardware optimisation run or a measured quantum runtime. Dynamic programming exploits the path or ring structure and checks every reported table minimum.
+
+The profile update freezes pairwise tables within each exact inner optimisation. It stops on a fixed plan, a repeated plan or 25 rounds, and returns the last distinct input plan on a cycle. Ten tested scenarios reach a fixed plan and six detect a cycle. No global convergence claim is made. The discrete bandwidth reference exhaustively maximises a flow-weighted common-green criterion under the same fixed cycles and greens. It is not an implementation of the complete MAXBAND or MULTIBAND formulations.
+
+## RESCO Corridor Projection
+
+[Reinforcement Signal Control (RESCO)](https://github.com/Pi-Star-Lab/RESCO) is pinned at `f1ed9a174f8de41fc9d8689373b836bc882570dc`. The extractor checks both Cologne3 XML hashes. `results/resco/provenance.json` records source junctions, road chains, demand selection, green fractions and transformations.
+
+RC3 keeps vehicles visiting the three original signals exactly once in west-to-east or east-to-west order: 193 forward and 127 reverse vehicles out of 4494 source vehicles. Other signal-visit sequences are excluded. Retained endpoint turns and U-turns contribute to pooled green fractions, but each direction is represented as one coordinated movement. The fractions include protected G and permissive g states and are scaled to a common 60-second cycle. Discharge capacity, cross demand, storage, clearance and stationary Poisson arrivals follow the controlled design. RC3 is a documented corridor projection, not a calibrated Cologne study or a reproduction of the complete SUMO benchmark. The source-road map shows the intersignal mapping, not every aggregated endpoint movement, and grey contextual roads are not simulated.
 
 ## PointQ
 
-PointQ is an external traffic simulator maintained at [akurzhan/point-q](https://github.com/akurzhan/point-q). The study uses commit `769af12f47da7bbfe29570fd6c9da479e10381cb`. Install that version using Git:
+The external simulator [PointQ](https://github.com/akurzhan/point-q) is pinned at `769af12f47da7bbfe29570fd6c9da479e10381cb`:
 
 ```sh
 python scripts/setup_pointq.py
-```
-
-The wrapper changes input configuration and seeds independent entry-arrival streams. It does not replace the engine's queue or departure equations. The input generator converts the saturation rate from vehicles per second to vehicles per 0.1-second PointQ time unit.
-
-To rerun all 288 cases, use a separate copy without the archived per-run `results/pointq_v2/v2_*.json` files and without prior `pq/` completion files, then run:
-
-```sh
 python code/run_pointq_suite.py
+python code/run_pointq_extension.py
 ```
 
-The suite is restartable and skips completed cases. Each scenario uses eight common-arrival seeds across equal offsets, forward progression and the queue-table optimum. The traffic evidence includes cases where forward progression outperforms the queue-table plan. The pairwise objective uses frozen local release profiles, whereas PointQ propagates arrivals and represents finite storage.
+These restartable commands skip existing per-run result files. To rerun all simulations, use a calculation copy without the archived per-run `v2_*.json`, `ext_*.json` and `pq/` completion files. Model and plan inputs must be generated first. The extension uses the initial suite's arrival hashes to verify matching streams.
+
+There are four networks, four demand levels, five plans and eight common-arrival seeds, giving 640 runs. Each lasts 4800 simulated seconds with a 1200-second initial period. The wrapper changes configurations and arrival seeds, not the engine's queue or departure equations. Saturation is converted from vehicles per second to vehicles per 0.1-second simulator time unit.
+
+PointQ's finite-storage rule adjusts nominal running time by the unoccupied fraction of a link. Completed-trip delay uses the nominal route free-flow reference and is accompanied by network queue and exit rate. Unfinished vehicles remain in conservation checks. The initial queue-table plan can perform worse than forward progression, and profile updates are not uniformly beneficial. Identical plans yield identical simulations and are not independent evidence of separate benefits.
 
 ## IBM Hardware
 
-The archived experiment contains 15 completed jobs on `ibm_fez`, 180 circuit executions and 737,280 shots. Its total measured quantum usage is 495 seconds. `seed_11.qpy`, `seed_29.qpy` and `seed_47.qpy` are the native-gate circuits used in those jobs. Count files retain job IDs and all measured bit strings. Account and billing records are excluded.
+The archive contains 17 completed `ibm_fez` jobs, 204 executions of 4096 shots each, 835584 shots and 525 measured quantum seconds. The main comparison uses fifteen jobs and 495 seconds. Two full-oracle precision jobs use thirty seconds. Native QPY circuits, initial/final physical layouts, raw bit strings, job IDs and calibration snapshots are included. Account and quota records are excluded.
 
-Reproducing the archived summaries requires no IBM account. Acquiring new data requires a separately configured Qiskit Runtime account, an accessible backend and sufficient quantum allowance. Device calibration and available backends change, so new results will not be numerically identical.
+The 228 basis checks comprise 28 cost tests and 200 bit/phase tests. Bit tests initialise the flag at zero. Twelve main-suite seed-11 native circuits and all twelve precision-diagnostic circuits are verified noiselessly. The two coarse-cost cases preserve the corresponding fine-table minimum marked set. This agreement is instance-specific and does not preserve all cost rankings or every threshold predicate. RC3-C2's conflict gap falls from 4 at fine resolution to zero in its coarse hardware table, so that experiment preserves the optimum but not the directional conflict. Its three transpiler seeds produce two distinct initial placements, while B3-C2's produce one.
 
-In a fresh acquisition directory with the model results copied over, the acquisition sequence is:
+Reproducing summaries requires no IBM account. New acquisition requires a separately configured Runtime account, an accessible backend and sufficient allowance. In a fresh acquisition copy with the model inputs present:
 
 ```sh
 python code/prepare_hardware.py
 python code/validate_hardware_inputs.py
 python code/run_hardware.py --execute
+python code/precision_hardware.py --prepare
+python code/precision_hardware.py --execute
 ```
 
-The validation step aligns baseline initial layouts with the amplified circuits and checks all twelve seed-11 native circuits noiselessly. The final command explicitly authorises quantum execution and enforces the study's usage guard. Do not run it merely to regenerate plots. Never add your local Runtime credentials or account-quota files to version control.
+Execution is opt-in and subject to the study's cumulative usage guard. Do not use these commands to regenerate plots. The main and precision acquisition directories must be fresh to avoid replaying an archived job record. Never commit local Runtime credentials, account-quota files or newly acquired unsanitised job records. Backend calibrations change, so fresh measurements will differ.
 
-## Attribution and Scope
+Hardware error bars describe the observed batch/layout combinations, not independent calibration periods. The full reversible oracle evaluates link tables. The separate compiled phase diagnostic enumerates the feasible set and omits arithmetic on the device. It is not a scalable replacement for the full construction. Hardware limits depend on cost precision, instances, layouts and device conditions.
 
-Qiskit, NumPy, SciPy, Matplotlib and PointQ remain third-party dependencies governed by their respective terms. PointQ should be cited through its original source and associated literature, including Lioris et al., *Transportation Research Part C* 77, 292-305, DOI [10.1016/j.trc.2017.01.023](https://doi.org/10.1016/j.trc.2017.01.023).
+## Attribution
 
-The full reversible oracle and the enumeration-based compiled phase diagnostic are separate implementations. The latter tests amplification with reduced arithmetic cost and is not presented as a scalable replacement for the reversible construction. The hardware boundary applies to the documented instances, layouts, shot counts and device conditions.
+Qiskit, NumPy, SciPy, Matplotlib, PointQ and RESCO remain third-party resources under their own terms. Cite the original PointQ source and Lioris et al., *Transportation Research Part C* 77, 292-305, DOI [10.1016/j.trc.2017.01.023](https://doi.org/10.1016/j.trc.2017.01.023). The RESCO benchmark is described by Ault and Sharon (2021), [Reinforcement Learning Benchmarks for Traffic Signal Control](https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/f0935e4cd5920aa6c7c996a5ee53a70f-Abstract-round1.html). Qiskit is described by Javadi-Abhari et al. (2024), DOI [10.48550/arXiv.2405.08810](https://doi.org/10.48550/arXiv.2405.08810).

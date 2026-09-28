@@ -1,0 +1,1561 @@
+{
+  "rows": [
+    {
+      "case": "B3-C2",
+      "route": "reversible",
+      "k": 0,
+      "K": 4,
+      "alpha": 0.25,
+      "ideal": 0.25,
+      "seed_transpiler": 11,
+      "shots": 4096,
+      "logical_qubits": 4,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        13,
+        15
+      ],
+      "initial_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "final_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "depth": 4,
+      "operations": {
+        "rz": 4,
+        "sx": 2,
+        "measure": 2
+      },
+      "two_qubit_gates": 0,
+      "estimated_circuit_seconds": 1.6839999999999999e-06,
+      "eta": 64,
+      "sum_qubits": 2,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 256,
+      "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+      "repeat": 1,
+      "counts": {
+        "10": 1069,
+        "11": 1021,
+        "01": 991,
+        "00": 1015
+      },
+      "job_id": "dat4ogrojkfs738q5o1g",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1015,
+      "probability": 0.247802734375,
+      "shot_ci95": [
+        0.23482142860780114,
+        0.2612566464223786
+      ]
+    },
+    {
+      "case": "B3-C2",
+      "route": "reversible",
+      "k": 1,
+      "K": 4,
+      "alpha": 0.25,
+      "ideal": 1.0,
+      "seed_transpiler": 11,
+      "shots": 4096,
+      "logical_qubits": 4,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "initial_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "final_layout": [
+        14,
+        13,
+        15,
+        12
+      ],
+      "depth": 170,
+      "operations": {
+        "sx": 107,
+        "rz": 84,
+        "cz": 48,
+        "x": 4,
+        "measure": 2
+      },
+      "two_qubit_gates": 48,
+      "estimated_circuit_seconds": 6.488000000000004e-06,
+      "eta": 64,
+      "sum_qubits": 2,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 256,
+      "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+      "repeat": 1,
+      "counts": {
+        "10": 435,
+        "00": 3097,
+        "01": 289,
+        "11": 275
+      },
+      "job_id": "dat4ogrojkfs738q5o1g",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 3097,
+      "probability": 0.756103515625,
+      "shot_ci95": [
+        0.742716441975044,
+        0.7690106628587812
+      ]
+    },
+    {
+      "case": "RC3-C2",
+      "route": "reversible",
+      "k": 0,
+      "K": 7,
+      "alpha": 0.25,
+      "ideal": 0.25,
+      "seed_transpiler": 11,
+      "shots": 4096,
+      "logical_qubits": 5,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        1,
+        3
+      ],
+      "initial_layout": [
+        3,
+        1,
+        2,
+        4,
+        16
+      ],
+      "final_layout": [
+        3,
+        1,
+        2,
+        4,
+        16
+      ],
+      "depth": 4,
+      "operations": {
+        "rz": 4,
+        "sx": 2,
+        "measure": 2
+      },
+      "two_qubit_gates": 0,
+      "estimated_circuit_seconds": 1.6839999999999999e-06,
+      "eta": 8,
+      "sum_qubits": 3,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 32,
+      "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+      "repeat": 1,
+      "counts": {
+        "11": 1055,
+        "01": 1036,
+        "10": 1060,
+        "00": 945
+      },
+      "job_id": "dat4ogrojkfs738q5o1g",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1055,
+      "probability": 0.257568359375,
+      "shot_ci95": [
+        0.2444079478503913,
+        0.2711830768398009
+      ]
+    },
+    {
+      "case": "RC3-C2",
+      "route": "reversible",
+      "k": 1,
+      "K": 7,
+      "alpha": 0.25,
+      "ideal": 1.0,
+      "seed_transpiler": 11,
+      "shots": 4096,
+      "logical_qubits": 5,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        1,
+        2,
+        3,
+        4,
+        16
+      ],
+      "initial_layout": [
+        3,
+        1,
+        2,
+        4,
+        16
+      ],
+      "final_layout": [
+        2,
+        3,
+        1,
+        16,
+        4
+      ],
+      "depth": 539,
+      "operations": {
+        "sx": 416,
+        "rz": 235,
+        "cz": 196,
+        "x": 10,
+        "measure": 2
+      },
+      "two_qubit_gates": 196,
+      "estimated_circuit_seconds": 2.0123999999999962e-05,
+      "eta": 8,
+      "sum_qubits": 3,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 32,
+      "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+      "repeat": 1,
+      "counts": {
+        "01": 1062,
+        "11": 1206,
+        "10": 1006,
+        "00": 822
+      },
+      "job_id": "dat4ogrojkfs738q5o1g",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1206,
+      "probability": 0.29443359375,
+      "shot_ci95": [
+        0.28067317348444815,
+        0.3085792361722908
+      ]
+    },
+    {
+      "case": "B3-C2",
+      "route": "reversible",
+      "k": 0,
+      "K": 4,
+      "alpha": 0.25,
+      "ideal": 0.25,
+      "seed_transpiler": 29,
+      "shots": 4096,
+      "logical_qubits": 4,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        13,
+        15
+      ],
+      "initial_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "final_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "depth": 4,
+      "operations": {
+        "rz": 4,
+        "sx": 2,
+        "measure": 2
+      },
+      "two_qubit_gates": 0,
+      "estimated_circuit_seconds": 1.6839999999999999e-06,
+      "eta": 64,
+      "sum_qubits": 2,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 256,
+      "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+      "repeat": 1,
+      "counts": {
+        "01": 1003,
+        "10": 1066,
+        "11": 1017,
+        "00": 1010
+      },
+      "job_id": "dat4ogrojkfs738q5o1g",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1010,
+      "probability": 0.24658203125,
+      "shot_ci95": [
+        0.23362374328527108,
+        0.26001521303740716
+      ]
+    },
+    {
+      "case": "B3-C2",
+      "route": "reversible",
+      "k": 1,
+      "K": 4,
+      "alpha": 0.25,
+      "ideal": 1.0,
+      "seed_transpiler": 29,
+      "shots": 4096,
+      "logical_qubits": 4,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "initial_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "final_layout": [
+        14,
+        13,
+        15,
+        12
+      ],
+      "depth": 170,
+      "operations": {
+        "sx": 107,
+        "rz": 84,
+        "cz": 48,
+        "x": 4,
+        "measure": 2
+      },
+      "two_qubit_gates": 48,
+      "estimated_circuit_seconds": 6.488000000000004e-06,
+      "eta": 64,
+      "sum_qubits": 2,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 256,
+      "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+      "repeat": 1,
+      "counts": {
+        "00": 3113,
+        "01": 270,
+        "10": 394,
+        "11": 319
+      },
+      "job_id": "dat4ogrojkfs738q5o1g",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 3113,
+      "probability": 0.760009765625,
+      "shot_ci95": [
+        0.746691002838137,
+        0.772841281859693
+      ]
+    },
+    {
+      "case": "RC3-C2",
+      "route": "reversible",
+      "k": 0,
+      "K": 7,
+      "alpha": 0.25,
+      "ideal": 0.25,
+      "seed_transpiler": 29,
+      "shots": 4096,
+      "logical_qubits": 5,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        1,
+        3
+      ],
+      "initial_layout": [
+        3,
+        1,
+        16,
+        4,
+        2
+      ],
+      "final_layout": [
+        3,
+        1,
+        16,
+        4,
+        2
+      ],
+      "depth": 4,
+      "operations": {
+        "rz": 4,
+        "sx": 2,
+        "measure": 2
+      },
+      "two_qubit_gates": 0,
+      "estimated_circuit_seconds": 1.6839999999999999e-06,
+      "eta": 8,
+      "sum_qubits": 3,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 32,
+      "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+      "repeat": 1,
+      "counts": {
+        "00": 1041,
+        "10": 1074,
+        "11": 1060,
+        "01": 921
+      },
+      "job_id": "dat4ogrojkfs738q5o1g",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1060,
+      "probability": 0.2587890625,
+      "shot_ci95": [
+        0.24560688236315428,
+        0.2724232610345395
+      ]
+    },
+    {
+      "case": "RC3-C2",
+      "route": "reversible",
+      "k": 1,
+      "K": 7,
+      "alpha": 0.25,
+      "ideal": 1.0,
+      "seed_transpiler": 29,
+      "shots": 4096,
+      "logical_qubits": 5,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        1,
+        2,
+        3,
+        4,
+        16
+      ],
+      "initial_layout": [
+        3,
+        1,
+        16,
+        4,
+        2
+      ],
+      "final_layout": [
+        2,
+        3,
+        1,
+        4,
+        16
+      ],
+      "depth": 545,
+      "operations": {
+        "sx": 418,
+        "rz": 237,
+        "cz": 200,
+        "x": 10,
+        "measure": 2
+      },
+      "two_qubit_gates": 200,
+      "estimated_circuit_seconds": 2.0083999999999966e-05,
+      "eta": 8,
+      "sum_qubits": 3,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 32,
+      "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+      "repeat": 1,
+      "counts": {
+        "10": 994,
+        "00": 870,
+        "11": 1240,
+        "01": 992
+      },
+      "job_id": "dat4ogrojkfs738q5o1g",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1240,
+      "probability": 0.302734375,
+      "shot_ci95": [
+        0.288854457018177,
+        0.3169839598495725
+      ]
+    },
+    {
+      "case": "B3-C2",
+      "route": "reversible",
+      "k": 0,
+      "K": 4,
+      "alpha": 0.25,
+      "ideal": 0.25,
+      "seed_transpiler": 47,
+      "shots": 4096,
+      "logical_qubits": 4,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        13,
+        15
+      ],
+      "initial_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "final_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "depth": 4,
+      "operations": {
+        "rz": 4,
+        "sx": 2,
+        "measure": 2
+      },
+      "two_qubit_gates": 0,
+      "estimated_circuit_seconds": 1.6839999999999999e-06,
+      "eta": 64,
+      "sum_qubits": 2,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 256,
+      "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+      "repeat": 1,
+      "counts": {
+        "10": 1042,
+        "01": 960,
+        "11": 1017,
+        "00": 1077
+      },
+      "job_id": "dat4ogrojkfs738q5o1g",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1077,
+      "probability": 0.262939453125,
+      "shot_ci95": [
+        0.24968426993767262,
+        0.2766388770655264
+      ]
+    },
+    {
+      "case": "B3-C2",
+      "route": "reversible",
+      "k": 1,
+      "K": 4,
+      "alpha": 0.25,
+      "ideal": 1.0,
+      "seed_transpiler": 47,
+      "shots": 4096,
+      "logical_qubits": 4,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "initial_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "final_layout": [
+        14,
+        13,
+        15,
+        12
+      ],
+      "depth": 170,
+      "operations": {
+        "sx": 107,
+        "rz": 84,
+        "cz": 48,
+        "x": 4,
+        "measure": 2
+      },
+      "two_qubit_gates": 48,
+      "estimated_circuit_seconds": 6.488000000000004e-06,
+      "eta": 64,
+      "sum_qubits": 2,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 256,
+      "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+      "repeat": 1,
+      "counts": {
+        "00": 3130,
+        "01": 295,
+        "11": 267,
+        "10": 404
+      },
+      "job_id": "dat4ogrojkfs738q5o1g",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 3130,
+      "probability": 0.76416015625,
+      "shot_ci95": [
+        0.7509156145098268,
+        0.7769096737935086
+      ]
+    },
+    {
+      "case": "RC3-C2",
+      "route": "reversible",
+      "k": 0,
+      "K": 7,
+      "alpha": 0.25,
+      "ideal": 0.25,
+      "seed_transpiler": 47,
+      "shots": 4096,
+      "logical_qubits": 5,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        1,
+        3
+      ],
+      "initial_layout": [
+        3,
+        1,
+        16,
+        4,
+        2
+      ],
+      "final_layout": [
+        3,
+        1,
+        16,
+        4,
+        2
+      ],
+      "depth": 4,
+      "operations": {
+        "rz": 4,
+        "sx": 2,
+        "measure": 2
+      },
+      "two_qubit_gates": 0,
+      "estimated_circuit_seconds": 1.6839999999999999e-06,
+      "eta": 8,
+      "sum_qubits": 3,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 32,
+      "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+      "repeat": 1,
+      "counts": {
+        "00": 1045,
+        "11": 1038,
+        "01": 939,
+        "10": 1074
+      },
+      "job_id": "dat4ogrojkfs738q5o1g",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1038,
+      "probability": 0.25341796875,
+      "shot_ci95": [
+        0.24033259294257536,
+        0.26696542814211155
+      ]
+    },
+    {
+      "case": "RC3-C2",
+      "route": "reversible",
+      "k": 1,
+      "K": 7,
+      "alpha": 0.25,
+      "ideal": 1.0,
+      "seed_transpiler": 47,
+      "shots": 4096,
+      "logical_qubits": 5,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        1,
+        2,
+        3,
+        4,
+        16
+      ],
+      "initial_layout": [
+        3,
+        1,
+        16,
+        4,
+        2
+      ],
+      "final_layout": [
+        2,
+        3,
+        1,
+        4,
+        16
+      ],
+      "depth": 545,
+      "operations": {
+        "sx": 418,
+        "rz": 237,
+        "cz": 200,
+        "x": 10,
+        "measure": 2
+      },
+      "two_qubit_gates": 200,
+      "estimated_circuit_seconds": 2.0083999999999966e-05,
+      "eta": 8,
+      "sum_qubits": 3,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 32,
+      "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+      "repeat": 1,
+      "counts": {
+        "10": 952,
+        "11": 1337,
+        "00": 890,
+        "01": 917
+      },
+      "job_id": "dat4ogrojkfs738q5o1g",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1337,
+      "probability": 0.326416015625,
+      "shot_ci95": [
+        0.3122246233809629,
+        0.3409326964123167
+      ]
+    },
+    {
+      "case": "B3-C2",
+      "route": "reversible",
+      "k": 0,
+      "K": 4,
+      "alpha": 0.25,
+      "ideal": 0.25,
+      "seed_transpiler": 11,
+      "shots": 4096,
+      "logical_qubits": 4,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        13,
+        15
+      ],
+      "initial_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "final_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "depth": 4,
+      "operations": {
+        "rz": 4,
+        "sx": 2,
+        "measure": 2
+      },
+      "two_qubit_gates": 0,
+      "estimated_circuit_seconds": 1.6839999999999999e-06,
+      "eta": 64,
+      "sum_qubits": 2,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 256,
+      "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+      "repeat": 2,
+      "counts": {
+        "00": 980,
+        "11": 1026,
+        "01": 1012,
+        "10": 1078
+      },
+      "job_id": "dat4omrojkfs738q5o80",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 980,
+      "probability": 0.2392578125,
+      "shot_ci95": [
+        0.22644064297215732,
+        0.25256360110551157
+      ]
+    },
+    {
+      "case": "B3-C2",
+      "route": "reversible",
+      "k": 1,
+      "K": 4,
+      "alpha": 0.25,
+      "ideal": 1.0,
+      "seed_transpiler": 11,
+      "shots": 4096,
+      "logical_qubits": 4,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "initial_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "final_layout": [
+        14,
+        13,
+        15,
+        12
+      ],
+      "depth": 170,
+      "operations": {
+        "sx": 107,
+        "rz": 84,
+        "cz": 48,
+        "x": 4,
+        "measure": 2
+      },
+      "two_qubit_gates": 48,
+      "estimated_circuit_seconds": 6.488000000000004e-06,
+      "eta": 64,
+      "sum_qubits": 2,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 256,
+      "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+      "repeat": 2,
+      "counts": {
+        "00": 3130,
+        "10": 406,
+        "01": 287,
+        "11": 273
+      },
+      "job_id": "dat4omrojkfs738q5o80",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 3130,
+      "probability": 0.76416015625,
+      "shot_ci95": [
+        0.7509156145098268,
+        0.7769096737935086
+      ]
+    },
+    {
+      "case": "RC3-C2",
+      "route": "reversible",
+      "k": 0,
+      "K": 7,
+      "alpha": 0.25,
+      "ideal": 0.25,
+      "seed_transpiler": 11,
+      "shots": 4096,
+      "logical_qubits": 5,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        1,
+        3
+      ],
+      "initial_layout": [
+        3,
+        1,
+        2,
+        4,
+        16
+      ],
+      "final_layout": [
+        3,
+        1,
+        2,
+        4,
+        16
+      ],
+      "depth": 4,
+      "operations": {
+        "rz": 4,
+        "sx": 2,
+        "measure": 2
+      },
+      "two_qubit_gates": 0,
+      "estimated_circuit_seconds": 1.6839999999999999e-06,
+      "eta": 8,
+      "sum_qubits": 3,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 32,
+      "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+      "repeat": 2,
+      "counts": {
+        "11": 1094,
+        "10": 1003,
+        "01": 978,
+        "00": 1021
+      },
+      "job_id": "dat4omrojkfs738q5o80",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1094,
+      "probability": 0.26708984375,
+      "shot_ci95": [
+        0.25376320057515017,
+        0.2808529500335541
+      ]
+    },
+    {
+      "case": "RC3-C2",
+      "route": "reversible",
+      "k": 1,
+      "K": 7,
+      "alpha": 0.25,
+      "ideal": 1.0,
+      "seed_transpiler": 11,
+      "shots": 4096,
+      "logical_qubits": 5,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        1,
+        2,
+        3,
+        4,
+        16
+      ],
+      "initial_layout": [
+        3,
+        1,
+        2,
+        4,
+        16
+      ],
+      "final_layout": [
+        2,
+        3,
+        1,
+        16,
+        4
+      ],
+      "depth": 539,
+      "operations": {
+        "sx": 416,
+        "rz": 235,
+        "cz": 196,
+        "x": 10,
+        "measure": 2
+      },
+      "two_qubit_gates": 196,
+      "estimated_circuit_seconds": 2.0123999999999962e-05,
+      "eta": 8,
+      "sum_qubits": 3,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 32,
+      "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+      "repeat": 2,
+      "counts": {
+        "00": 883,
+        "11": 1209,
+        "10": 1011,
+        "01": 993
+      },
+      "job_id": "dat4omrojkfs738q5o80",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1209,
+      "probability": 0.295166015625,
+      "shot_ci95": [
+        0.2813948296735927,
+        0.30932105120764725
+      ]
+    },
+    {
+      "case": "B3-C2",
+      "route": "reversible",
+      "k": 0,
+      "K": 4,
+      "alpha": 0.25,
+      "ideal": 0.25,
+      "seed_transpiler": 29,
+      "shots": 4096,
+      "logical_qubits": 4,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        13,
+        15
+      ],
+      "initial_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "final_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "depth": 4,
+      "operations": {
+        "rz": 4,
+        "sx": 2,
+        "measure": 2
+      },
+      "two_qubit_gates": 0,
+      "estimated_circuit_seconds": 1.6839999999999999e-06,
+      "eta": 64,
+      "sum_qubits": 2,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 256,
+      "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+      "repeat": 2,
+      "counts": {
+        "10": 1083,
+        "01": 974,
+        "11": 1061,
+        "00": 978
+      },
+      "job_id": "dat4omrojkfs738q5o80",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 978,
+      "probability": 0.23876953125,
+      "shot_ci95": [
+        0.2259619555099607,
+        0.2520666410847076
+      ]
+    },
+    {
+      "case": "B3-C2",
+      "route": "reversible",
+      "k": 1,
+      "K": 4,
+      "alpha": 0.25,
+      "ideal": 1.0,
+      "seed_transpiler": 29,
+      "shots": 4096,
+      "logical_qubits": 4,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "initial_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "final_layout": [
+        14,
+        13,
+        15,
+        12
+      ],
+      "depth": 170,
+      "operations": {
+        "sx": 107,
+        "rz": 84,
+        "cz": 48,
+        "x": 4,
+        "measure": 2
+      },
+      "two_qubit_gates": 48,
+      "estimated_circuit_seconds": 6.488000000000004e-06,
+      "eta": 64,
+      "sum_qubits": 2,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 256,
+      "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+      "repeat": 2,
+      "counts": {
+        "00": 3045,
+        "11": 294,
+        "10": 421,
+        "01": 336
+      },
+      "job_id": "dat4omrojkfs738q5o80",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 3045,
+      "probability": 0.743408203125,
+      "shot_ci95": [
+        0.7298091685341473,
+        0.7565511017416616
+      ]
+    },
+    {
+      "case": "RC3-C2",
+      "route": "reversible",
+      "k": 0,
+      "K": 7,
+      "alpha": 0.25,
+      "ideal": 0.25,
+      "seed_transpiler": 29,
+      "shots": 4096,
+      "logical_qubits": 5,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        1,
+        3
+      ],
+      "initial_layout": [
+        3,
+        1,
+        16,
+        4,
+        2
+      ],
+      "final_layout": [
+        3,
+        1,
+        16,
+        4,
+        2
+      ],
+      "depth": 4,
+      "operations": {
+        "rz": 4,
+        "sx": 2,
+        "measure": 2
+      },
+      "two_qubit_gates": 0,
+      "estimated_circuit_seconds": 1.6839999999999999e-06,
+      "eta": 8,
+      "sum_qubits": 3,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 32,
+      "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+      "repeat": 2,
+      "counts": {
+        "11": 1021,
+        "00": 1040,
+        "10": 1020,
+        "01": 1015
+      },
+      "job_id": "dat4omrojkfs738q5o80",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1021,
+      "probability": 0.249267578125,
+      "shot_ci95": [
+        0.23625883771279363,
+        0.26274617976638803
+      ]
+    },
+    {
+      "case": "RC3-C2",
+      "route": "reversible",
+      "k": 1,
+      "K": 7,
+      "alpha": 0.25,
+      "ideal": 1.0,
+      "seed_transpiler": 29,
+      "shots": 4096,
+      "logical_qubits": 5,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        1,
+        2,
+        3,
+        4,
+        16
+      ],
+      "initial_layout": [
+        3,
+        1,
+        16,
+        4,
+        2
+      ],
+      "final_layout": [
+        2,
+        3,
+        1,
+        4,
+        16
+      ],
+      "depth": 545,
+      "operations": {
+        "sx": 418,
+        "rz": 237,
+        "cz": 200,
+        "x": 10,
+        "measure": 2
+      },
+      "two_qubit_gates": 200,
+      "estimated_circuit_seconds": 2.0083999999999966e-05,
+      "eta": 8,
+      "sum_qubits": 3,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 32,
+      "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+      "repeat": 2,
+      "counts": {
+        "10": 984,
+        "00": 911,
+        "01": 948,
+        "11": 1253
+      },
+      "job_id": "dat4omrojkfs738q5o80",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1253,
+      "probability": 0.305908203125,
+      "shot_ci95": [
+        0.2919840369962907,
+        0.3201960885109628
+      ]
+    },
+    {
+      "case": "B3-C2",
+      "route": "reversible",
+      "k": 0,
+      "K": 4,
+      "alpha": 0.25,
+      "ideal": 0.25,
+      "seed_transpiler": 47,
+      "shots": 4096,
+      "logical_qubits": 4,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        13,
+        15
+      ],
+      "initial_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "final_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "depth": 4,
+      "operations": {
+        "rz": 4,
+        "sx": 2,
+        "measure": 2
+      },
+      "two_qubit_gates": 0,
+      "estimated_circuit_seconds": 1.6839999999999999e-06,
+      "eta": 64,
+      "sum_qubits": 2,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 256,
+      "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+      "repeat": 2,
+      "counts": {
+        "01": 967,
+        "00": 1014,
+        "10": 1104,
+        "11": 1011
+      },
+      "job_id": "dat4omrojkfs738q5o80",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1014,
+      "probability": 0.24755859375,
+      "shot_ci95": [
+        0.23458188020091308,
+        0.26100837108776637
+      ]
+    },
+    {
+      "case": "B3-C2",
+      "route": "reversible",
+      "k": 1,
+      "K": 4,
+      "alpha": 0.25,
+      "ideal": 1.0,
+      "seed_transpiler": 47,
+      "shots": 4096,
+      "logical_qubits": 4,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "initial_layout": [
+        13,
+        15,
+        14,
+        12
+      ],
+      "final_layout": [
+        14,
+        13,
+        15,
+        12
+      ],
+      "depth": 170,
+      "operations": {
+        "sx": 107,
+        "rz": 84,
+        "cz": 48,
+        "x": 4,
+        "measure": 2
+      },
+      "two_qubit_gates": 48,
+      "estimated_circuit_seconds": 6.488000000000004e-06,
+      "eta": 64,
+      "sum_qubits": 2,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 256,
+      "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+      "repeat": 2,
+      "counts": {
+        "00": 3080,
+        "11": 343,
+        "10": 387,
+        "01": 286
+      },
+      "job_id": "dat4omrojkfs738q5o80",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 3080,
+      "probability": 0.751953125,
+      "shot_ci95": [
+        0.7384950839029597,
+        0.7649390173253602
+      ]
+    },
+    {
+      "case": "RC3-C2",
+      "route": "reversible",
+      "k": 0,
+      "K": 7,
+      "alpha": 0.25,
+      "ideal": 0.25,
+      "seed_transpiler": 47,
+      "shots": 4096,
+      "logical_qubits": 5,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        1,
+        3
+      ],
+      "initial_layout": [
+        3,
+        1,
+        16,
+        4,
+        2
+      ],
+      "final_layout": [
+        3,
+        1,
+        16,
+        4,
+        2
+      ],
+      "depth": 4,
+      "operations": {
+        "rz": 4,
+        "sx": 2,
+        "measure": 2
+      },
+      "two_qubit_gates": 0,
+      "estimated_circuit_seconds": 1.6839999999999999e-06,
+      "eta": 8,
+      "sum_qubits": 3,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 32,
+      "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+      "repeat": 2,
+      "counts": {
+        "11": 1041,
+        "01": 987,
+        "10": 1065,
+        "00": 1003
+      },
+      "job_id": "dat4omrojkfs738q5o80",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1041,
+      "probability": 0.254150390625,
+      "shot_ci95": [
+        0.24105165771827272,
+        0.2677098345909152
+      ]
+    },
+    {
+      "case": "RC3-C2",
+      "route": "reversible",
+      "k": 1,
+      "K": 7,
+      "alpha": 0.25,
+      "ideal": 1.0,
+      "seed_transpiler": 47,
+      "shots": 4096,
+      "logical_qubits": 5,
+      "offset_qubits": 2,
+      "active_physical_qubits": [
+        1,
+        2,
+        3,
+        4,
+        16
+      ],
+      "initial_layout": [
+        3,
+        1,
+        16,
+        4,
+        2
+      ],
+      "final_layout": [
+        2,
+        3,
+        1,
+        4,
+        16
+      ],
+      "depth": 545,
+      "operations": {
+        "sx": 418,
+        "rz": 237,
+        "cz": 200,
+        "x": 10,
+        "measure": 2
+      },
+      "two_qubit_gates": 200,
+      "estimated_circuit_seconds": 2.0083999999999966e-05,
+      "eta": 8,
+      "sum_qubits": 3,
+      "same_minimum_marked_set_as_fine": true,
+      "worst_case_optimisation_loss_bound": 32,
+      "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+      "repeat": 2,
+      "counts": {
+        "00": 823,
+        "01": 910,
+        "11": 1330,
+        "10": 1033
+      },
+      "job_id": "dat4omrojkfs738q5o80",
+      "pub_metadata": {
+        "circuit_metadata": {}
+      },
+      "successes": 1330,
+      "probability": 0.32470703125,
+      "shot_ci95": [
+        0.3105366949053048,
+        0.33920585869747266
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "case": "B3-C2",
+      "eta": 64,
+      "sum_qubits": 2,
+      "logical_qubits": 4,
+      "K": 4,
+      "alpha": 0.25,
+      "ideal": 1,
+      "baseline": {
+        "mean": 0.24715169270833334,
+        "lo": 0.23796998493187232,
+        "hi": 0.25633340048479436,
+        "n": 6
+      },
+      "probability": {
+        "mean": 0.7566324869791666,
+        "lo": 0.7482134809725209,
+        "hi": 0.7650514929858123,
+        "n": 6
+      },
+      "paired_excess": {
+        "mean": 0.5094807942708334,
+        "lo": 0.5004247024219148,
+        "hi": 0.5185368861197519,
+        "n": 6
+      },
+      "excess_retention": {
+        "mean": 0.6793077256944445,
+        "lo": 0.6672329365625531,
+        "hi": 0.691382514826336,
+        "n": 6
+      },
+      "two_qubit_gates": [
+        48,
+        48
+      ],
+      "pooled_shot_ci95": [
+        0.751227691004489,
+        0.7619570673729232
+      ]
+    },
+    {
+      "case": "RC3-C2",
+      "eta": 8,
+      "sum_qubits": 3,
+      "logical_qubits": 5,
+      "K": 7,
+      "alpha": 0.25,
+      "ideal": 1,
+      "baseline": {
+        "mean": 0.2567138671875,
+        "lo": 0.25032041687892054,
+        "hi": 0.26310731749607946,
+        "n": 6
+      },
+      "probability": {
+        "mean": 0.3082275390625,
+        "lo": 0.2933950009448551,
+        "hi": 0.3230600771801449,
+        "n": 6
+      },
+      "paired_excess": {
+        "mean": 0.051513671875,
+        "lo": 0.032324937816189975,
+        "hi": 0.07070240593381003,
+        "n": 6
+      },
+      "excess_retention": {
+        "mean": 0.06868489583333333,
+        "lo": 0.043099917088253295,
+        "hi": 0.09426987457841336,
+        "n": 6
+      },
+      "two_qubit_gates": [
+        196,
+        200
+      ],
+      "pooled_shot_ci95": [
+        0.3024847733722391,
+        0.3140302470443228
+      ]
+    }
+  ],
+  "actual_quantum_seconds": 30.0,
+  "jobs": 2,
+  "uncertainty": "Descriptive 95% t intervals across six batch-seed observations (two batches, three transpiler seeds). Initial placements repeat: one distinct for B3-C2, two for RC3-C2."
+}

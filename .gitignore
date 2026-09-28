@@ -9,3 +9,4 @@ manuscript/
 results/hardware/initial_usage.json
 results/hardware/backend_configuration.json
 results/hardware/backend_properties.json
+results/hardware_precision/initial_usage.json

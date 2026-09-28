@@ -21,6 +21,8 @@ plt.rcParams.update({'font.family':'Arial', 'font.size':9, 'axes.labelsize':9,
     'pdf.fonttype':42, 'ps.fonttype':42, 'axes.spines.top':False, 'axes.spines.right':False,
     'axes.linewidth':.7, 'lines.linewidth':1.5, 'savefig.facecolor':'white'})
 INK, BLUE, RED, GREEN = '#4C4C4C', '#0072B2', '#D55E00', '#009E73'
+PURPLE, GOLD = '#7A3E65', '#9B7B20'
+PLAN_COLORS = [INK, GREEN, PURPLE]
 COLORS, STYLES, MARKERS = [INK, RED, BLUE], ['--', '-.', '-'], ['o', 's', '^']
 METHODS = ['random', 'coordinate', 'quantum_reference']
 METHOD_LABELS = ['Random sampling', 'Coordinate descent', 'Ideal adaptive Grover']
@@ -46,13 +48,42 @@ def legend(fig, ax):
     fig.legend(*ax.get_legend_handles_labels(), loc='outside upper center', ncol=3, frameon=False)
 
 def networks():
-    fig, axes = plt.subplots(1, 3, figsize=(6.5, 1.85), layout='constrained')
-    for ax, family, title, letter in zip(axes, ('unidirectional','bidirectional','ring'),
-            ('One-way corridor (U4)','Two-way corridor (B4)','Two-way ring (R4)'), 'abc'):
+    fig, axes = plt.subplots(2, 2, figsize=(6.5, 4.1), layout='constrained')
+    for ax, family, title, letter in zip(axes.flat, ('unidirectional','bidirectional','ring','resco'),
+            ('Controlled one-way corridor (U4)','Controlled two-way corridor (B4)','Controlled two-way ring (R4)','Source road geometry (RC3)'), 'abcd'):
         positions = np.array([[0,.5],[1,.5],[2,.5],[3,.5]])
         if family == 'ring':
             positions = np.array([[.5,1.15],[2.5,1.15],[2.5,-.15],[.5,-.15]])
-        for edge in Scenario('network',4,family).links():
+        if family == 'resco':
+            source=read('results/resco/provenance.json')
+            positions=np.array([[v['x'],v['y']] for v in source['junctions']])
+            geometry={v['edge']:np.array(v['shape']) for v in source['road_geometry']}
+            for xy in geometry.values():
+                ax.plot(*xy.T,color='.80',lw=.8,zorder=1)
+            for edge in source['links']:
+                colour=BLUE if edge['i']<edge['j'] else RED
+                for segment in edge['segments']:
+                    xy=geometry[segment['edge']]
+                    ax.plot(*xy.T,color=colour,lw=1.6,zorder=2)
+                xy=geometry[edge['segments'][1]['edge']]
+                ax.annotate('',xy[-1],xy[0],arrowprops=dict(arrowstyle='-|>',color=colour,lw=1.3),zorder=3)
+            ax.scatter(*positions.T,s=165,color='white',edgecolor=INK,zorder=4)
+            for node,(x,y) in enumerate(positions):
+                ax.text(x,y,str(node+1),ha='center',va='center',fontsize=8,zorder=5)
+                ax.annotate(f"g = {source['green_mapping'][node]['common_cycle_green']} s",(x,y),
+                            xytext=(8,-17),textcoords='offset points',fontsize=7.5,
+                            bbox=dict(fc='white',ec='none',pad=.6),zorder=6)
+            xmin,ymin=positions.min(axis=0)-[90,80]
+            xmax,ymax=positions.max(axis=0)+[90,80]
+            ax.plot([xmin+15,xmin+115],[ymax-15,ymax-15],color=INK,lw=1.8)
+            ax.text(xmin+65,ymax-32,'100 m',ha='center',va='top',fontsize=7.5)
+            panel(ax,letter,title)
+            ax.set(xlim=(xmin,xmax),ylim=(ymin,ymax),aspect='equal')
+            ax.axis('off')
+            continue
+        else:
+            edges=Scenario('network',4,family).links()
+        for edge in edges:
             start,end = positions[edge['i']],positions[edge['j']]
             delta = end-start
             normal = np.array([-delta[1],delta[0]])/np.linalg.norm(delta)*(.095 if family!='unidirectional' else 0)
@@ -63,6 +94,8 @@ def networks():
             ax.text(x,y,str(node+1),ha='center',va='center',zorder=5)
         panel(ax,letter,title)
         ax.set(xlim=(-.3,3.3),ylim=(-.65,1.65),aspect='equal')
+        if family=='bidirectional':
+            ax.text(1.5,-.25,'4 prescribed signals; synthetic travel times',ha='center',fontsize=7.5)
         ax.axis('off')
     handles=[plt.Line2D([],[],color=BLUE,label='Forward movement'),plt.Line2D([],[],color=RED,label='Reverse movement')]
     fig.legend(handles=handles,loc='outside lower center',ncol=2,frameon=False)
@@ -81,7 +114,7 @@ def mechanism():
             axes[row,col].axvspan(0,scenario.greens[1],color=GREEN,alpha=.09,lw=0)
             axes[row,col].set_xlim(0,60)
         panel(axes[0,col],'ab'[col],title)
-        panel(axes[1,col],'cd'[col],f'Queue delay = {delay:.1f} veh s/cycle')
+        panel(axes[1,col],'cd'[col],f'Queue delay = {delay:.1f} veh\u00b7s/cycle')
         axes[1,col].set(xlabel='Time relative to downstream green (s)',xticks=[0,15,30,45,60])
     axes[0,0].set(ylabel='Flow (veh/s)',ylim=(-.02,.57))
     axes[1,0].set(ylabel='Queue (veh)',ylim=(-.06,2.9))
@@ -108,7 +141,7 @@ def conflicts():
             axes[row,col].set(xticks=[0,15,30,45,60],xlim=(0,60))
         axes[1,col].set_xlabel('Relative offset (s)')
     for ax in axes[:,0]:
-        ax.set(ylabel='Queue delay (veh s/cycle)',ylim=(0,1.08*ymax))
+        ax.set(ylabel='Queue delay (veh\u00b7s/cycle)',ylim=(0,1.08*ymax))
     grid(axes)
     legend(fig,axes[0,0])
     save(fig,'fig3_offset_conflicts')
@@ -135,8 +168,8 @@ def pointq():
                     means.append(values.mean())
                     errors.append(t.ppf(.975,7)*values.std(ddof=1)/np.sqrt(8))
                 positions=np.array(demands)+(.012*(2*pi-3) if row else 0)
-                axes[row,col].errorbar(positions,means,yerr=errors,color=COLORS[pi],marker=MARKERS[pi],
-                    mfc='white' if pi==1 else COLORS[pi],ls=STYLES[pi],ms=3.5,capsize=2,label=PLAN_LABELS[pi])
+                axes[row,col].errorbar(positions,means,yerr=errors,color=PLAN_COLORS[pi],marker=MARKERS[pi],
+                    mfc='white' if pi==1 else PLAN_COLORS[pi],ls=STYLES[pi],ms=3.5,capsize=2,label=PLAN_LABELS[pi])
         for row in range(3):
             panel(axes[row,col],chr(97+row*3+col),network)
             axes[row,col].set_xticks(demands,['0.65','1.00','1.35','1.55'])
@@ -163,7 +196,7 @@ def optimisation():
             gap=(traces-record['minimum'])/record['minimum']*100
             x=np.arange(1,gap.shape[1]+1)
             axes[0,col].plot(x,np.median(gap,axis=0),color=COLORS[i],ls=STYLES[i],label=METHOD_LABELS[i])
-            axes[0,col].fill_between(x,np.quantile(gap,.1,axis=0),np.quantile(gap,.9,axis=0),color=COLORS[i],alpha=.10,lw=0)
+            axes[0,col].fill_between(x,np.quantile(gap,.25,axis=0),np.quantile(gap,.75,axis=0),color=COLORS[i],alpha=.10,lw=0)
         panel(axes[0,col],'ab'[col],f"{name}, {record['N']:,} assignments")
         axes[0,col].set(xlabel='Objective-oracle queries',ylabel='Gap to exact minimum (%)',xscale='log',xlim=(1,gap.shape[1]))
     scale=sorted([v for v in records if v['case'] in ('B3-C4','B4-C4','B5-C4','B6-C4','B8-C4','B6-C8')],key=lambda v:v['N'])
@@ -223,10 +256,10 @@ def hardware():
         axes[0].errorbar(x,y,xerr=[[x-record['two_qubit_gates'][0]],[record['two_qubit_gates'][1]-x]],
             yerr=[[y-record['excess_retention']['lo']],[record['excess_retention']['hi']-y]],
             color=RED if full else BLUE,marker='s' if full else 'o',capsize=2,ms=5)
-        offsets=[(0,-20),(-4,13),(6,0),(-14,18),(5,35),(16,24)]
-        axes[0].annotate(record['case']+(' full' if full else ''),(x,y),xytext=offsets[index],textcoords='offset points',
-            ha='right' if index==1 else 'left' if index==2 else 'center',fontsize=7.5,
-            arrowprops=dict(arrowstyle='-',lw=.5,color='.5') if index in (0,4,5) else None)
+        labels=[(12500,-.08),(45000,.07),(62,.50),(210,.18),(650,.105),(6100,.03)]
+        axes[0].annotate(record['case']+(' full' if full else ''),(x,y),xytext=labels[index],textcoords='data',
+            ha='center',fontsize=7.5,
+            arrowprops=dict(arrowstyle='-',lw=.5,color='.5'))
     axes[0].axhline(0,color=INK,lw=.8,ls='--')
     axes[0].set(xlabel='Transpiled two-qubit gates',ylabel='Excess-retention ratio',xscale='log',xlim=(25,110000),ylim=(-.12,.66))
     panel(axes[0],'a','Retention and circuit burden')
@@ -239,7 +272,7 @@ def hardware():
             for repeat in range(1,6):
                 pair=[v for v in document['rows'] if (v['case'],v['route'])==identity and v['repeat']==repeat and v['seed_transpiler']==seed]
                 increases.append(next(v['probability'] for v in pair if v['k']==1)-next(v['probability'] for v in pair if v['k']==0))
-            ax.scatter(increases,row+(si-1)*.16+np.linspace(-.06,.06,5),color=COLORS[si],
+            ax.scatter(increases,row+(si-1)*.16+np.linspace(-.06,.06,5),color=['.2','.45','.68'][si],
                 s=11,marker=MARKERS[si],alpha=.8,label=f'Seed {seed}' if show_labels else None)
         stats=summaries[sequence.index(identity)]['paired_excess']
         ax.errorbar(stats['mean'],row+.36,xerr=[[stats['mean']-stats['lo']],[stats['hi']-stats['mean']]],
@@ -262,6 +295,67 @@ def hardware():
         bbox_to_anchor=(.5,-.65),ncol=3,frameon=False,fontsize=7,handletextpad=.25,columnspacing=.9)
     save(fig,'fig7_hardware_boundary')
 
+
+def oracle_circuit():
+    from matplotlib.patches import Rectangle
+    fig,ax=plt.subplots(figsize=(7.2,2.6))
+    ax.set(xlim=(0,13.4),ylim=(-.4,2.6))
+    ax.axis('off')
+    y_offset,y_sum=1.8,.7
+    for y in (y_offset,y_sum):
+        ax.plot([1.3,11.9],[y,y],color=INK,lw=1)
+        ax.plot([1.45,1.58],[y-.08,y+.08],color=INK,lw=.8)
+    ax.text(1.15,y_offset,r'$|\psi_0\rangle$',ha='right',va='center',fontsize=12)
+    ax.text(1.15,y_sum,r'$|0\rangle_s$',ha='right',va='center',fontsize=12)
+    ax.text(.15,2.35,'Offsets',fontsize=9)
+    ax.text(.15,.2,'Accumulator',fontsize=9)
+    def box(x,y,w,h,label,size=11):
+        ax.add_patch(Rectangle((x-w/2,y-h/2),w,h,fc='white',ec=INK,lw=.9,zorder=4))
+        ax.text(x,y,label,ha='center',va='center',fontsize=size,zorder=5)
+    box(2.05,y_sum,.8,.56,'QFT',9)
+    ax.plot([3.6,3.6],[y_sum,y_offset],color=INK,lw=1)
+    ax.plot(3.6,y_offset,'o',color=INK,ms=4)
+    box(3.6,y_sum,1.8,.72,'Controlled\nphase additions',8.5)
+    box(5.2,y_sum,1.0,.56,r'QFT$^{-1}$',9)
+    box(6.7,y_sum,1.25,.72,r'$Z_{\leq\widetilde K}$',12)
+    box(8.55,1.25,1.35,1.65,r'$U_D^{\dagger}$',14)
+    box(10.65,y_offset,1.2,.65,r'$\mathcal{R}$',14)
+    ax.text(12.05,y_sum,r'$|0\rangle_s$',va='center',fontsize=12)
+    ax.text(12.05,y_offset,r'$G_K|\psi_0\rangle$',va='center',fontsize=11)
+    ax.plot([1.65,5.7],[.12,.12],color=INK,lw=.7)
+    for x in (1.65,5.7):
+        ax.plot([x,x],[.12,.23],color=INK,lw=.7)
+    ax.text(3.65,-.06,r'Compute reduced delay: $U_D$',ha='center',va='top',fontsize=9)
+    ax.text(6.7,-.06,'Phase marking',ha='center',va='top',fontsize=9)
+    ax.text(8.55,-.06,'Uncompute',ha='center',va='top',fontsize=9)
+    ax.text(10.65,-.06,'Reflection',ha='center',va='top',fontsize=9)
+    ax.text(3.6,2.2,'Endpoint-offset controls',ha='center',fontsize=9)
+    fig.subplots_adjust(left=.01,right=.99,bottom=.1,top=.96)
+    save(fig,'fig8_oracle_circuit')
+
+
+def traffic_extension():
+    data=read('results/statistics/traffic_extension_paired.json')
+    fig,axes=plt.subplots(2,2,figsize=(6.5,4.8),layout='constrained')
+    demands=[.65,1,1.35,1.55]
+    plans=[('optimised',PURPLE,'^','Initial queue tables'),('propagated','#365F73','D','Updated profiles'),
+           ('bandwidth',GOLD,'s','Discrete bandwidth')]
+    for ax,family,letter in zip(axes.flat,('U4','B4','R4','RC3'),'abcd'):
+        for index,(plan,color,marker,label) in enumerate(plans):
+            values=[next(v['difference']['completed_mean_delay'] for v in data
+                         if v['case']==f'{family}-{load:g}' and v['plan']==plan and v['reference']=='progression') for load in demands]
+            means=np.array([v['mean'] for v in values])
+            errors=np.array([[v['mean']-v['lo'] for v in values],[v['hi']-v['mean'] for v in values]])
+            ax.errorbar(np.array(demands)+(index-1)*.012,means,yerr=errors,color=color,
+                        marker=marker,ms=4,ls=['-', '--', ':'][index],capsize=2,label=label)
+        ax.axhline(0,color=INK,lw=.8,ls=':')
+        ax.set(xlabel='Demand multiplier',ylabel='Delay change from progression (s/veh)',
+               xticks=demands,xticklabels=['0.65','1.00','1.35','1.55'])
+        panel(ax,letter,family if family!='RC3' else 'RC3: corridor projection')
+    grid(axes)
+    legend(fig,axes[0,0])
+    save(fig,'fig9_profile_sensitivity')
+
 if __name__=='__main__':
     networks()
     mechanism()
@@ -270,3 +364,5 @@ if __name__=='__main__':
     optimisation()
     quantum_verification()
     hardware()
+    oracle_circuit()
+    traffic_extension()

@@ -1,0 +1,665 @@
+[
+  {
+    "case": "B3-C2",
+    "route": "reversible",
+    "k": 0,
+    "K": 4,
+    "alpha": 0.25,
+    "ideal": 0.25,
+    "seed_transpiler": 11,
+    "shots": 4096,
+    "logical_qubits": 4,
+    "offset_qubits": 2,
+    "active_physical_qubits": [
+      13,
+      15
+    ],
+    "initial_layout": [
+      13,
+      15,
+      14,
+      12
+    ],
+    "final_layout": [
+      13,
+      15,
+      14,
+      12
+    ],
+    "depth": 4,
+    "operations": {
+      "rz": 4,
+      "sx": 2,
+      "measure": 2
+    },
+    "two_qubit_gates": 0,
+    "estimated_circuit_seconds": 1.6839999999999999e-06,
+    "eta": 64,
+    "sum_qubits": 2,
+    "same_minimum_marked_set_as_fine": true,
+    "worst_case_optimisation_loss_bound": 256,
+    "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+    "repeat": 1,
+    "counts": {
+      "10": 1069,
+      "11": 1021,
+      "01": 991,
+      "00": 1015
+    },
+    "job_id": "dat4ogrojkfs738q5o1g",
+    "pub_metadata": {
+      "circuit_metadata": {}
+    }
+  },
+  {
+    "case": "B3-C2",
+    "route": "reversible",
+    "k": 1,
+    "K": 4,
+    "alpha": 0.25,
+    "ideal": 1.0,
+    "seed_transpiler": 11,
+    "shots": 4096,
+    "logical_qubits": 4,
+    "offset_qubits": 2,
+    "active_physical_qubits": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "initial_layout": [
+      13,
+      15,
+      14,
+      12
+    ],
+    "final_layout": [
+      14,
+      13,
+      15,
+      12
+    ],
+    "depth": 170,
+    "operations": {
+      "sx": 107,
+      "rz": 84,
+      "cz": 48,
+      "x": 4,
+      "measure": 2
+    },
+    "two_qubit_gates": 48,
+    "estimated_circuit_seconds": 6.488000000000004e-06,
+    "eta": 64,
+    "sum_qubits": 2,
+    "same_minimum_marked_set_as_fine": true,
+    "worst_case_optimisation_loss_bound": 256,
+    "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+    "repeat": 1,
+    "counts": {
+      "10": 435,
+      "00": 3097,
+      "01": 289,
+      "11": 275
+    },
+    "job_id": "dat4ogrojkfs738q5o1g",
+    "pub_metadata": {
+      "circuit_metadata": {}
+    }
+  },
+  {
+    "case": "RC3-C2",
+    "route": "reversible",
+    "k": 0,
+    "K": 7,
+    "alpha": 0.25,
+    "ideal": 0.25,
+    "seed_transpiler": 11,
+    "shots": 4096,
+    "logical_qubits": 5,
+    "offset_qubits": 2,
+    "active_physical_qubits": [
+      1,
+      3
+    ],
+    "initial_layout": [
+      3,
+      1,
+      2,
+      4,
+      16
+    ],
+    "final_layout": [
+      3,
+      1,
+      2,
+      4,
+      16
+    ],
+    "depth": 4,
+    "operations": {
+      "rz": 4,
+      "sx": 2,
+      "measure": 2
+    },
+    "two_qubit_gates": 0,
+    "estimated_circuit_seconds": 1.6839999999999999e-06,
+    "eta": 8,
+    "sum_qubits": 3,
+    "same_minimum_marked_set_as_fine": true,
+    "worst_case_optimisation_loss_bound": 32,
+    "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+    "repeat": 1,
+    "counts": {
+      "11": 1055,
+      "01": 1036,
+      "10": 1060,
+      "00": 945
+    },
+    "job_id": "dat4ogrojkfs738q5o1g",
+    "pub_metadata": {
+      "circuit_metadata": {}
+    }
+  },
+  {
+    "case": "RC3-C2",
+    "route": "reversible",
+    "k": 1,
+    "K": 7,
+    "alpha": 0.25,
+    "ideal": 1.0,
+    "seed_transpiler": 11,
+    "shots": 4096,
+    "logical_qubits": 5,
+    "offset_qubits": 2,
+    "active_physical_qubits": [
+      1,
+      2,
+      3,
+      4,
+      16
+    ],
+    "initial_layout": [
+      3,
+      1,
+      2,
+      4,
+      16
+    ],
+    "final_layout": [
+      2,
+      3,
+      1,
+      16,
+      4
+    ],
+    "depth": 539,
+    "operations": {
+      "sx": 416,
+      "rz": 235,
+      "cz": 196,
+      "x": 10,
+      "measure": 2
+    },
+    "two_qubit_gates": 196,
+    "estimated_circuit_seconds": 2.0123999999999962e-05,
+    "eta": 8,
+    "sum_qubits": 3,
+    "same_minimum_marked_set_as_fine": true,
+    "worst_case_optimisation_loss_bound": 32,
+    "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+    "repeat": 1,
+    "counts": {
+      "01": 1062,
+      "11": 1206,
+      "10": 1006,
+      "00": 822
+    },
+    "job_id": "dat4ogrojkfs738q5o1g",
+    "pub_metadata": {
+      "circuit_metadata": {}
+    }
+  },
+  {
+    "case": "B3-C2",
+    "route": "reversible",
+    "k": 0,
+    "K": 4,
+    "alpha": 0.25,
+    "ideal": 0.25,
+    "seed_transpiler": 29,
+    "shots": 4096,
+    "logical_qubits": 4,
+    "offset_qubits": 2,
+    "active_physical_qubits": [
+      13,
+      15
+    ],
+    "initial_layout": [
+      13,
+      15,
+      14,
+      12
+    ],
+    "final_layout": [
+      13,
+      15,
+      14,
+      12
+    ],
+    "depth": 4,
+    "operations": {
+      "rz": 4,
+      "sx": 2,
+      "measure": 2
+    },
+    "two_qubit_gates": 0,
+    "estimated_circuit_seconds": 1.6839999999999999e-06,
+    "eta": 64,
+    "sum_qubits": 2,
+    "same_minimum_marked_set_as_fine": true,
+    "worst_case_optimisation_loss_bound": 256,
+    "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+    "repeat": 1,
+    "counts": {
+      "01": 1003,
+      "10": 1066,
+      "11": 1017,
+      "00": 1010
+    },
+    "job_id": "dat4ogrojkfs738q5o1g",
+    "pub_metadata": {
+      "circuit_metadata": {}
+    }
+  },
+  {
+    "case": "B3-C2",
+    "route": "reversible",
+    "k": 1,
+    "K": 4,
+    "alpha": 0.25,
+    "ideal": 1.0,
+    "seed_transpiler": 29,
+    "shots": 4096,
+    "logical_qubits": 4,
+    "offset_qubits": 2,
+    "active_physical_qubits": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "initial_layout": [
+      13,
+      15,
+      14,
+      12
+    ],
+    "final_layout": [
+      14,
+      13,
+      15,
+      12
+    ],
+    "depth": 170,
+    "operations": {
+      "sx": 107,
+      "rz": 84,
+      "cz": 48,
+      "x": 4,
+      "measure": 2
+    },
+    "two_qubit_gates": 48,
+    "estimated_circuit_seconds": 6.488000000000004e-06,
+    "eta": 64,
+    "sum_qubits": 2,
+    "same_minimum_marked_set_as_fine": true,
+    "worst_case_optimisation_loss_bound": 256,
+    "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+    "repeat": 1,
+    "counts": {
+      "00": 3113,
+      "01": 270,
+      "10": 394,
+      "11": 319
+    },
+    "job_id": "dat4ogrojkfs738q5o1g",
+    "pub_metadata": {
+      "circuit_metadata": {}
+    }
+  },
+  {
+    "case": "RC3-C2",
+    "route": "reversible",
+    "k": 0,
+    "K": 7,
+    "alpha": 0.25,
+    "ideal": 0.25,
+    "seed_transpiler": 29,
+    "shots": 4096,
+    "logical_qubits": 5,
+    "offset_qubits": 2,
+    "active_physical_qubits": [
+      1,
+      3
+    ],
+    "initial_layout": [
+      3,
+      1,
+      16,
+      4,
+      2
+    ],
+    "final_layout": [
+      3,
+      1,
+      16,
+      4,
+      2
+    ],
+    "depth": 4,
+    "operations": {
+      "rz": 4,
+      "sx": 2,
+      "measure": 2
+    },
+    "two_qubit_gates": 0,
+    "estimated_circuit_seconds": 1.6839999999999999e-06,
+    "eta": 8,
+    "sum_qubits": 3,
+    "same_minimum_marked_set_as_fine": true,
+    "worst_case_optimisation_loss_bound": 32,
+    "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+    "repeat": 1,
+    "counts": {
+      "00": 1041,
+      "10": 1074,
+      "11": 1060,
+      "01": 921
+    },
+    "job_id": "dat4ogrojkfs738q5o1g",
+    "pub_metadata": {
+      "circuit_metadata": {}
+    }
+  },
+  {
+    "case": "RC3-C2",
+    "route": "reversible",
+    "k": 1,
+    "K": 7,
+    "alpha": 0.25,
+    "ideal": 1.0,
+    "seed_transpiler": 29,
+    "shots": 4096,
+    "logical_qubits": 5,
+    "offset_qubits": 2,
+    "active_physical_qubits": [
+      1,
+      2,
+      3,
+      4,
+      16
+    ],
+    "initial_layout": [
+      3,
+      1,
+      16,
+      4,
+      2
+    ],
+    "final_layout": [
+      2,
+      3,
+      1,
+      4,
+      16
+    ],
+    "depth": 545,
+    "operations": {
+      "sx": 418,
+      "rz": 237,
+      "cz": 200,
+      "x": 10,
+      "measure": 2
+    },
+    "two_qubit_gates": 200,
+    "estimated_circuit_seconds": 2.0083999999999966e-05,
+    "eta": 8,
+    "sum_qubits": 3,
+    "same_minimum_marked_set_as_fine": true,
+    "worst_case_optimisation_loss_bound": 32,
+    "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+    "repeat": 1,
+    "counts": {
+      "10": 994,
+      "00": 870,
+      "11": 1240,
+      "01": 992
+    },
+    "job_id": "dat4ogrojkfs738q5o1g",
+    "pub_metadata": {
+      "circuit_metadata": {}
+    }
+  },
+  {
+    "case": "B3-C2",
+    "route": "reversible",
+    "k": 0,
+    "K": 4,
+    "alpha": 0.25,
+    "ideal": 0.25,
+    "seed_transpiler": 47,
+    "shots": 4096,
+    "logical_qubits": 4,
+    "offset_qubits": 2,
+    "active_physical_qubits": [
+      13,
+      15
+    ],
+    "initial_layout": [
+      13,
+      15,
+      14,
+      12
+    ],
+    "final_layout": [
+      13,
+      15,
+      14,
+      12
+    ],
+    "depth": 4,
+    "operations": {
+      "rz": 4,
+      "sx": 2,
+      "measure": 2
+    },
+    "two_qubit_gates": 0,
+    "estimated_circuit_seconds": 1.6839999999999999e-06,
+    "eta": 64,
+    "sum_qubits": 2,
+    "same_minimum_marked_set_as_fine": true,
+    "worst_case_optimisation_loss_bound": 256,
+    "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+    "repeat": 1,
+    "counts": {
+      "10": 1042,
+      "01": 960,
+      "11": 1017,
+      "00": 1077
+    },
+    "job_id": "dat4ogrojkfs738q5o1g",
+    "pub_metadata": {
+      "circuit_metadata": {}
+    }
+  },
+  {
+    "case": "B3-C2",
+    "route": "reversible",
+    "k": 1,
+    "K": 4,
+    "alpha": 0.25,
+    "ideal": 1.0,
+    "seed_transpiler": 47,
+    "shots": 4096,
+    "logical_qubits": 4,
+    "offset_qubits": 2,
+    "active_physical_qubits": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "initial_layout": [
+      13,
+      15,
+      14,
+      12
+    ],
+    "final_layout": [
+      14,
+      13,
+      15,
+      12
+    ],
+    "depth": 170,
+    "operations": {
+      "sx": 107,
+      "rz": 84,
+      "cz": 48,
+      "x": 4,
+      "measure": 2
+    },
+    "two_qubit_gates": 48,
+    "estimated_circuit_seconds": 6.488000000000004e-06,
+    "eta": 64,
+    "sum_qubits": 2,
+    "same_minimum_marked_set_as_fine": true,
+    "worst_case_optimisation_loss_bound": 256,
+    "fine_source_sha256": "eb4aa6788a5a3eb7bef6d6669583f43b4e9ae4223cb49a7d334e08f678623ef2",
+    "repeat": 1,
+    "counts": {
+      "00": 3130,
+      "01": 295,
+      "11": 267,
+      "10": 404
+    },
+    "job_id": "dat4ogrojkfs738q5o1g",
+    "pub_metadata": {
+      "circuit_metadata": {}
+    }
+  },
+  {
+    "case": "RC3-C2",
+    "route": "reversible",
+    "k": 0,
+    "K": 7,
+    "alpha": 0.25,
+    "ideal": 0.25,
+    "seed_transpiler": 47,
+    "shots": 4096,
+    "logical_qubits": 5,
+    "offset_qubits": 2,
+    "active_physical_qubits": [
+      1,
+      3
+    ],
+    "initial_layout": [
+      3,
+      1,
+      16,
+      4,
+      2
+    ],
+    "final_layout": [
+      3,
+      1,
+      16,
+      4,
+      2
+    ],
+    "depth": 4,
+    "operations": {
+      "rz": 4,
+      "sx": 2,
+      "measure": 2
+    },
+    "two_qubit_gates": 0,
+    "estimated_circuit_seconds": 1.6839999999999999e-06,
+    "eta": 8,
+    "sum_qubits": 3,
+    "same_minimum_marked_set_as_fine": true,
+    "worst_case_optimisation_loss_bound": 32,
+    "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+    "repeat": 1,
+    "counts": {
+      "00": 1045,
+      "11": 1038,
+      "01": 939,
+      "10": 1074
+    },
+    "job_id": "dat4ogrojkfs738q5o1g",
+    "pub_metadata": {
+      "circuit_metadata": {}
+    }
+  },
+  {
+    "case": "RC3-C2",
+    "route": "reversible",
+    "k": 1,
+    "K": 7,
+    "alpha": 0.25,
+    "ideal": 1.0,
+    "seed_transpiler": 47,
+    "shots": 4096,
+    "logical_qubits": 5,
+    "offset_qubits": 2,
+    "active_physical_qubits": [
+      1,
+      2,
+      3,
+      4,
+      16
+    ],
+    "initial_layout": [
+      3,
+      1,
+      16,
+      4,
+      2
+    ],
+    "final_layout": [
+      2,
+      3,
+      1,
+      4,
+      16
+    ],
+    "depth": 545,
+    "operations": {
+      "sx": 418,
+      "rz": 237,
+      "cz": 200,
+      "x": 10,
+      "measure": 2
+    },
+    "two_qubit_gates": 200,
+    "estimated_circuit_seconds": 2.0083999999999966e-05,
+    "eta": 8,
+    "sum_qubits": 3,
+    "same_minimum_marked_set_as_fine": true,
+    "worst_case_optimisation_loss_bound": 32,
+    "fine_source_sha256": "67a290c42fa53b9f5da8edf93383b139545e5728d1625875e0f5e61b93131dbf",
+    "repeat": 1,
+    "counts": {
+      "10": 952,
+      "11": 1337,
+      "00": 890,
+      "01": 917
+    },
+    "job_id": "dat4ogrojkfs738q5o1g",
+    "pub_metadata": {
+      "circuit_metadata": {}
+    }
+  }
+]

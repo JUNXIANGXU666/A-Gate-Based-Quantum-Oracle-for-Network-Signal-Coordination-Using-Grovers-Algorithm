@@ -20,12 +20,20 @@ class Scenario:
     load: float = 1.0
     saturation: float = 0.5
     quantum_unit: float = 1.0
+    greens_override: list | None = None
+    routes_override: list | None = None
+    links_override: list | None = None
+    cross_rates: list | None = None
 
     @property
     def greens(self):
+        if self.greens_override is not None:
+            return self.greens_override
         return [32, 36, 30, 34, 32, 34, 36, 30][:self.n]
 
     def routes(self):
+        if self.routes_override is not None:
+            return [(r[0], r[1]*self.load, r[2]) for r in self.routes_override]
         forward = list(range(self.n))
         if self.family == "ring":
             return [(forward + [0], 0.18*self.load, "forward"),
@@ -36,6 +44,8 @@ class Scenario:
         return routes
 
     def links(self):
+        if self.links_override is not None:
+            return [{**edge, "flow":edge["flow"]*self.load} for edge in self.links_override]
         result = []
         for route, flow, direction in self.routes():
             for i, j in zip(route, route[1:]):

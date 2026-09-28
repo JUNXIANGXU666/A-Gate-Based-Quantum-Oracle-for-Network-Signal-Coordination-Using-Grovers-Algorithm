@@ -1,0 +1,7 @@
+{
+  "circuits": 12,
+  "basis_tests": 56,
+  "all_isa_circuits_verified": true,
+  "qpy_sha256": "2a82307d159a3a36aac644bd6c159c5faa44074ec0012c3bcc3797fcdf639fc0",
+  "design": "Two full oracles, three transpiler seeds, k=0/1, two execution batches of 4096 shots. No mitigation."
+}
