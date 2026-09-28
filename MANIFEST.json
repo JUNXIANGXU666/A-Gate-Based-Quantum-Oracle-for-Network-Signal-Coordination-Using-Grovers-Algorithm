@@ -36,8 +36,8 @@
     "sha256": "5fbf7d7c16c0da2df148725f446dda583ae74e9a22aded545aac48c7d06f3b76"
   },
   "code/publication_figures.py": {
-    "bytes": 14515,
-    "sha256": "38c36c52a880a10e89ea207bc5f487bab53342a538db328d35ab0a6e8ce7a4a3"
+    "bytes": 16165,
+    "sha256": "a92fd3797efa6b7b62dcccb12fb7f044828d80116b8b8d634c0e26bb00d66a70"
   },
   "code/quantum_oracle.py": {
     "bytes": 4952,

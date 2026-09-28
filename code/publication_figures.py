@@ -120,18 +120,34 @@ def pointq():
     for col,network in enumerate(('U4','B4','R4')):
         for pi,plan in enumerate(PLANS):
             for row,key in enumerate(('completed_mean_delay','mean_network_queue','throughput_vehicles_hour')):
+                if row and plan=='synchronised':
+                    continue
                 means,errors=[],[]
                 for load in demands:
-                    values=np.array([v[key] for v in records if v['case']==f'{network}-{load:g}' and v['plan']==plan])
-                    assert len(values)==8
+                    paired={v['seed']:v[key] for v in records if v['case']==f'{network}-{load:g}' and v['plan']==plan}
+                    assert len(paired)==8
+                    if row:
+                        baseline={v['seed']:v[key] for v in records if v['case']==f'{network}-{load:g}' and v['plan']=='synchronised'}
+                        assert paired.keys()==baseline.keys()
+                        values=np.array([paired[seed]-baseline[seed] for seed in sorted(paired)])
+                    else:
+                        values=np.array(list(paired.values()))
                     means.append(values.mean())
                     errors.append(t.ppf(.975,7)*values.std(ddof=1)/np.sqrt(8))
-                axes[row,col].errorbar(demands,means,yerr=errors,color=COLORS[pi],marker=MARKERS[pi],ls=STYLES[pi],ms=3.5,capsize=2,label=PLAN_LABELS[pi])
+                positions=np.array(demands)+(.012*(2*pi-3) if row else 0)
+                axes[row,col].errorbar(positions,means,yerr=errors,color=COLORS[pi],marker=MARKERS[pi],
+                    mfc='white' if pi==1 else COLORS[pi],ls=STYLES[pi],ms=3.5,capsize=2,label=PLAN_LABELS[pi])
         for row in range(3):
             panel(axes[row,col],chr(97+row*3+col),network)
             axes[row,col].set_xticks(demands,['0.65','1.00','1.35','1.55'])
+            if row:
+                axes[row,col].axhline(0,color=INK,lw=.7,ls=':')
+        axes[0,col].set_yscale('log')
+        axes[0,col].set_ylim(12,240)
+        axes[0,col].set_yticks([15,30,60,120,240],['15','30','60','120','240'])
+        axes[0,col].minorticks_off()
         axes[2,col].set_xlabel('Demand multiplier')
-    for row,label in enumerate(('Completed-trip delay (s/veh)','Mean total queue (veh)','Network exits (veh/h)')):
+    for row,label in enumerate(('Trip delay (s/veh, log scale)','Queue change (veh)','Exit-rate change (veh/h)')):
         axes[row,0].set_ylabel(label)
     grid(axes)
     legend(fig,axes[0,0])
@@ -149,7 +165,7 @@ def optimisation():
             axes[0,col].plot(x,np.median(gap,axis=0),color=COLORS[i],ls=STYLES[i],label=METHOD_LABELS[i])
             axes[0,col].fill_between(x,np.quantile(gap,.1,axis=0),np.quantile(gap,.9,axis=0),color=COLORS[i],alpha=.10,lw=0)
         panel(axes[0,col],'ab'[col],f"{name}, {record['N']:,} assignments")
-        axes[0,col].set(xlabel='Objective-oracle queries',ylabel='Gap to exact minimum (%)',xlim=(0,gap.shape[1]))
+        axes[0,col].set(xlabel='Objective-oracle queries',ylabel='Gap to exact minimum (%)',xscale='log',xlim=(1,gap.shape[1]))
     scale=sorted([v for v in records if v['case'] in ('B3-C4','B4-C4','B5-C4','B6-C4','B8-C4','B6-C8')],key=lambda v:v['N'])
     for i,method in enumerate(METHODS):
         axes[1,0].plot([v['N'] for v in scale],[np.mean([r['best']==v['minimum'] for r in v['runs'][method]])*100 for v in scale],color=COLORS[i],marker=MARKERS[i],ls=STYLES[i],ms=4)
@@ -197,7 +213,9 @@ def hardware():
     document=read('results/statistics/hardware.json')
     sequence=[('B3-C2','reversible'),('B3-C4','reversible')]+[(f'B{i}-C4','compiled') for i in range(3,7)]
     summaries=[next(v for v in document['summary'] if (v['case'],v['route'])==identity) for identity in sequence]
-    fig,axes=plt.subplots(1,2,figsize=(6.5,3.35),gridspec_kw={'width_ratios':[1.05,1]},layout='constrained')
+    fig=plt.figure(figsize=(7.2,4.55),layout='constrained')
+    layout=fig.add_gridspec(2,2,width_ratios=[1.05,1],height_ratios=[3.2,1])
+    axes=[fig.add_subplot(layout[:,0]),fig.add_subplot(layout[0,1]),fig.add_subplot(layout[1,1])]
     for index,record in enumerate(summaries):
         x=np.mean(record['two_qubit_gates'])
         y=record['excess_retention']['mean']
@@ -211,25 +229,37 @@ def hardware():
             arrowprops=dict(arrowstyle='-',lw=.5,color='.5') if index in (0,4,5) else None)
     axes[0].axhline(0,color=INK,lw=.8,ls='--')
     axes[0].set(xlabel='Transpiled two-qubit gates',ylabel='Excess-retention ratio',xscale='log',xlim=(25,110000),ylim=(-.12,.66))
-    panel(axes[0],'a','Amplification and circuit burden')
+    panel(axes[0],'a','Retention and circuit burden')
     axes[0].plot([],[],'s',color=RED,label='Full reversible')
     axes[0].plot([],[],'o',color=BLUE,label='Compiled phase')
     axes[0].legend(loc='upper right',frameon=False,fontsize=7.5)
-    for row,identity in enumerate(sequence):
+    def paired_points(ax, row, identity, show_labels=False):
         for si,seed in enumerate((11,29,47)):
             increases=[]
             for repeat in range(1,6):
                 pair=[v for v in document['rows'] if (v['case'],v['route'])==identity and v['repeat']==repeat and v['seed_transpiler']==seed]
                 increases.append(next(v['probability'] for v in pair if v['k']==1)-next(v['probability'] for v in pair if v['k']==0))
-            axes[1].scatter(increases,row+(si-1)*.11+np.linspace(-.035,.035,5),color=COLORS[si],s=13,marker=MARKERS[si],alpha=.65,label=f'Seed {seed}' if row==0 else None)
-        stats=summaries[row]['paired_excess']
-        axes[1].errorbar(stats['mean'],row+.30,xerr=[[stats['mean']-stats['lo']],[stats['hi']-stats['mean']]],color='black',marker='|',ms=7,capsize=2,lw=1.2)
+            ax.scatter(increases,row+(si-1)*.16+np.linspace(-.06,.06,5),color=COLORS[si],
+                s=11,marker=MARKERS[si],alpha=.8,label=f'Seed {seed}' if show_labels else None)
+        stats=summaries[sequence.index(identity)]['paired_excess']
+        ax.errorbar(stats['mean'],row+.36,xerr=[[stats['mean']-stats['lo']],[stats['hi']-stats['mean']]],
+            color='black',marker='|',ms=6,capsize=2,lw=1.1)
+
+    near_baseline=[identity for identity in sequence if identity!=('B3-C4','compiled')]
+    for row,identity in enumerate(near_baseline):
+        paired_points(axes[1],row,identity,show_labels=row==0)
     axes[1].axvline(0,color=INK,lw=.8,ls='--')
-    axes[1].set(xlabel='Paired probability increase',yticks=np.arange(6),
-        yticklabels=['B3-C2 full','B3-C4 full','B3-C4 compiled','B4-C4 compiled','B5-C4 compiled','B6-C4 compiled'],ylim=(5.6,-.5),xlim=(-.05,.51))
-    axes[1].tick_params(axis='y',labelsize=8)
-    panel(axes[1],'b','All 15 batch-layout observations')
-    axes[1].legend(loc='upper center',bbox_to_anchor=(.5,-.19),ncol=3,frameon=False,fontsize=7)
+    axes[1].set(xlabel='Paired probability increase',yticks=np.arange(5),
+        yticklabels=['B3-C2 full','B3-C4 full','B4-C4 compiled','B5-C4 compiled','B6-C4 compiled'],
+        ylim=(4.65,-.45),xlim=(-.04,.065),xticks=[-.04,-.02,0,.02,.04,.06])
+    axes[1].tick_params(axis='y',labelsize=7.5)
+    axes[1].tick_params(axis='x',labelsize=7)
+    panel(axes[1],'b','Near-baseline cases (zoom)')
+    paired_points(axes[2],0,('B3-C4','compiled'))
+    axes[2].set(xlabel='Paired probability increase',yticks=[],ylim=(.65,-.45),xlim=(.18,.47),xticks=[.2,.3,.4])
+    panel(axes[2],'c','B3-C4 compiled')
+    axes[2].legend(*axes[1].get_legend_handles_labels(),loc='upper center',
+        bbox_to_anchor=(.5,-.65),ncol=3,frameon=False,fontsize=7,handletextpad=.25,columnspacing=.9)
     save(fig,'fig7_hardware_boundary')
 
 if __name__=='__main__':
