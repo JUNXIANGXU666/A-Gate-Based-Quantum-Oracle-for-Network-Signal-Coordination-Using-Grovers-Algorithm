@@ -223,7 +223,7 @@ def hardware():
         axes[0].errorbar(x,y,xerr=[[x-record['two_qubit_gates'][0]],[record['two_qubit_gates'][1]-x]],
             yerr=[[y-record['excess_retention']['lo']],[record['excess_retention']['hi']-y]],
             color=RED if full else BLUE,marker='s' if full else 'o',capsize=2,ms=5)
-        offsets=[(0,-20),(-4,13),(6,0),(0,17),(-16,39),(16,24)]
+        offsets=[(0,-20),(-4,13),(6,0),(-14,18),(5,35),(16,24)]
         axes[0].annotate(record['case']+(' full' if full else ''),(x,y),xytext=offsets[index],textcoords='offset points',
             ha='right' if index==1 else 'left' if index==2 else 'center',fontsize=7.5,
             arrowprops=dict(arrowstyle='-',lw=.5,color='.5') if index in (0,4,5) else None)

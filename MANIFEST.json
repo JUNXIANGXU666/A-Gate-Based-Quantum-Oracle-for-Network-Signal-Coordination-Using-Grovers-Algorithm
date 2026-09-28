@@ -16,8 +16,8 @@
     "sha256": "0a5f3799923486be5a912b83d1d762e7d6e63d3bd7d0f60f550bdd54d3253079"
   },
   "code/generate_tables.py": {
-    "bytes": 6952,
-    "sha256": "f56c7209395802f8e44f7cbc64733584ac7609c9226239a5fa7a133b9cba02d0"
+    "bytes": 6946,
+    "sha256": "5623f940560e9b775af29ecefeb011a1daf015040a5d796d9dec30972ac03269"
   },
   "code/optimisation_experiments.py": {
     "bytes": 5548,
@@ -37,7 +37,7 @@
   },
   "code/publication_figures.py": {
     "bytes": 16165,
-    "sha256": "a92fd3797efa6b7b62dcccb12fb7f044828d80116b8b8d634c0e26bb00d66a70"
+    "sha256": "c3dd5f6f02d1e07759cbccd1f01befe9de185a48c7adf5e13fd9154b43bcab1f"
   },
   "code/quantum_oracle.py": {
     "bytes": 4952,

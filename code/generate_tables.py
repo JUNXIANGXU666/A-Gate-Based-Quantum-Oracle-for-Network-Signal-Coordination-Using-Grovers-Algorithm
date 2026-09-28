@@ -9,7 +9,7 @@ OUT.mkdir(exist_ok=True)
 
 
 def table(caption,label,columns,heading,rows,note=''):
-    return '\n'.join([r'\begin{table}[tbp]',r'\centering',r'\caption{\rev{'+caption+'}}',
+    return '\n'.join([r'\begin{table}[H]',r'\centering',r'\caption{\rev{'+caption+'}}',
                       r'\label{'+label+'}',r'{\color{darkred}\small',r'\setlength{\tabcolsep}{4pt}',
                       r'\begin{tabular}{@{}'+columns+'@{}}',r'\toprule',heading+r'\\',r'\midrule',
                       *[row+r'\\' for row in rows],r'\bottomrule',r'\end{tabular}',
@@ -84,7 +84,7 @@ def main():
     (OUT/'calibration.tex').write_text(table('Calibration summaries captured before the execution batches.','tab:calibration','lrrr',
         'Quantity & Median & Minimum & Maximum',rows,
         r'Qubit statistics cover the union of active physical qubits. CZ statistics cover calibrated pairs within that union, including pairs not necessarily traversed by every circuit. Repeated property snapshots may contain the same calibration values.'),encoding='utf-8')
-    print('Generated six evidence tables. Calibration:',stats)
+    print('Generated evidence tables. Calibration:',stats)
 
 
 if __name__=='__main__':
