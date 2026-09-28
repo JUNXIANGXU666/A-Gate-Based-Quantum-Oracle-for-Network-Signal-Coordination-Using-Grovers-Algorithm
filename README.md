@@ -32,7 +32,7 @@ The experiments used Python 3.11.9. Install dependencies in a separate environme
 python -m pip install -r requirements.txt
 ```
 
-Arial is required for exact figure typography. The plotting script stops when Arial is unavailable. Reported classical timings were measured on Windows and need not match another computer.
+Arial is required for exact figure typography. The plotting script stops when Arial is unavailable. The circuit diagram uses Matplotlib's bundled STIX fonts for mathematical notation and Arial for text. Reported classical timings were measured on Windows and need not match another computer.
 
 ## Reproduce the Archived Results
 

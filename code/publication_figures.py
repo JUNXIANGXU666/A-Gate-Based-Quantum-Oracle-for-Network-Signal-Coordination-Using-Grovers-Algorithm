@@ -296,6 +296,7 @@ def hardware():
     save(fig,'fig7_hardware_boundary')
 
 
+@plt.rc_context({'mathtext.fontset': 'stix'})
 def oracle_circuit():
     from matplotlib.patches import Rectangle
     fig,ax=plt.subplots(figsize=(7.2,2.6))
