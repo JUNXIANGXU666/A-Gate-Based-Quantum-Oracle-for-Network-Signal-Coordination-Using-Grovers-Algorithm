@@ -1,0 +1,597 @@
+[
+  {
+    "case": "B3-C2",
+    "route": "reversible",
+    "seed_transpiler": 29,
+    "k": 0,
+    "K": 207,
+    "alpha": 0.25,
+    "ideal": 0.25,
+    "logical_qubits": 10,
+    "offset_qubits": 2,
+    "logical_operations": {
+      "h": 2,
+      "measure": 2
+    },
+    "depth": 4,
+    "two_qubit_gates": 0,
+    "operations": {
+      "rz": 4,
+      "sx": 2,
+      "measure": 2
+    },
+    "estimated_circuit_seconds": 1.6839999999999999e-06,
+    "compilation_seconds": 0.0044105000561103225,
+    "layout": [
+      132,
+      119,
+      133,
+      138,
+      130,
+      131,
+      151,
+      134,
+      129,
+      135
+    ],
+    "index": 0,
+    "shots": 4096,
+    "active_physical_qubits": [
+      119,
+      132
+    ]
+  },
+  {
+    "case": "B3-C2",
+    "route": "reversible",
+    "seed_transpiler": 29,
+    "k": 1,
+    "K": 207,
+    "alpha": 0.25,
+    "ideal": 1.0,
+    "logical_qubits": 10,
+    "offset_qubits": 2,
+    "logical_operations": {
+      "cp": 78,
+      "h": 38,
+      "mcphase_o2": 30,
+      "mcphase_o1": 30,
+      "x": 20,
+      "swap": 8,
+      "mcphase": 2,
+      "measure": 2
+    },
+    "depth": 3820,
+    "two_qubit_gates": 1969,
+    "operations": {
+      "sx": 4000,
+      "cz": 1969,
+      "rz": 1655,
+      "x": 23,
+      "measure": 2
+    },
+    "estimated_circuit_seconds": 0.00014109999999999527,
+    "compilation_seconds": 0.3150823999894783,
+    "layout": [
+      131,
+      132,
+      130,
+      138,
+      133,
+      151,
+      119,
+      134,
+      129,
+      135
+    ],
+    "index": 1,
+    "shots": 4096,
+    "active_physical_qubits": [
+      119,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      138,
+      151
+    ]
+  },
+  {
+    "case": "B3-C4",
+    "route": "reversible",
+    "seed_transpiler": 29,
+    "k": 0,
+    "K": 253,
+    "alpha": 0.125,
+    "ideal": 0.12500000000000003,
+    "logical_qubits": 14,
+    "offset_qubits": 4,
+    "logical_operations": {
+      "h": 4,
+      "measure": 4
+    },
+    "depth": 4,
+    "two_qubit_gates": 0,
+    "operations": {
+      "rz": 8,
+      "sx": 4,
+      "measure": 4
+    },
+    "estimated_circuit_seconds": 1.6839999999999999e-06,
+    "compilation_seconds": 0.004549499950371683,
+    "layout": [
+      154,
+      152,
+      134,
+      135,
+      153,
+      155,
+      139,
+      151,
+      138,
+      131,
+      130,
+      132,
+      133,
+      119
+    ],
+    "index": 2,
+    "shots": 4096,
+    "active_physical_qubits": [
+      134,
+      135,
+      152,
+      154
+    ]
+  },
+  {
+    "case": "B3-C4",
+    "route": "reversible",
+    "seed_transpiler": 29,
+    "k": 1,
+    "K": 253,
+    "alpha": 0.125,
+    "ideal": 0.7812500000000001,
+    "logical_qubits": 14,
+    "offset_qubits": 4,
+    "logical_operations": {
+      "cp": 90,
+      "mcphase_o0": 66,
+      "mcphase_o2": 66,
+      "mcphase": 61,
+      "x": 58,
+      "mcphase_o1": 56,
+      "h": 52,
+      "mcphase_o5": 40,
+      "mcphase_o10": 40,
+      "mcphase_o8": 38,
+      "mcphase_o12": 38,
+      "mcphase_o13": 38,
+      "mcphase_o6": 38,
+      "mcphase_o7": 38,
+      "mcphase_o11": 38,
+      "swap": 10,
+      "measure": 4
+    },
+    "depth": 116759,
+    "two_qubit_gates": 49860,
+    "operations": {
+      "sx": 103776,
+      "rz": 52649,
+      "cz": 49860,
+      "x": 508,
+      "measure": 4
+    },
+    "estimated_circuit_seconds": 0.003950488000002341,
+    "compilation_seconds": 8.841795999906026,
+    "layout": [
+      139,
+      155,
+      135,
+      154,
+      134,
+      133,
+      153,
+      131,
+      138,
+      130,
+      132,
+      119,
+      152,
+      151
+    ],
+    "index": 3,
+    "shots": 4096,
+    "active_physical_qubits": [
+      119,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      138,
+      139,
+      151,
+      152,
+      153,
+      154,
+      155
+    ]
+  },
+  {
+    "case": "B3-C4",
+    "route": "compiled",
+    "seed_transpiler": 29,
+    "k": 0,
+    "K": 253,
+    "alpha": 0.125,
+    "ideal": 0.12500000000000003,
+    "logical_qubits": 4,
+    "offset_qubits": 4,
+    "logical_operations": {
+      "h": 4,
+      "measure": 4
+    },
+    "depth": 4,
+    "two_qubit_gates": 0,
+    "operations": {
+      "rz": 8,
+      "sx": 4,
+      "measure": 4
+    },
+    "estimated_circuit_seconds": 1.6839999999999999e-06,
+    "compilation_seconds": 0.0049733000341802835,
+    "layout": [
+      3,
+      2,
+      4,
+      16
+    ],
+    "index": 4,
+    "shots": 4096,
+    "active_physical_qubits": [
+      2,
+      3,
+      4,
+      16
+    ]
+  },
+  {
+    "case": "B3-C4",
+    "route": "compiled",
+    "seed_transpiler": 29,
+    "k": 1,
+    "K": 253,
+    "alpha": 0.125,
+    "ideal": 0.7812500000000001,
+    "logical_qubits": 4,
+    "offset_qubits": 4,
+    "logical_operations": {
+      "h": 12,
+      "x": 8,
+      "measure": 4,
+      "diagonal": 1,
+      "mcphase": 1
+    },
+    "depth": 148,
+    "two_qubit_gates": 48,
+    "operations": {
+      "sx": 99,
+      "rz": 58,
+      "cz": 48,
+      "measure": 4,
+      "x": 1
+    },
+    "estimated_circuit_seconds": 6.364000000000003e-06,
+    "compilation_seconds": 0.026965000084601343,
+    "layout": [
+      3,
+      16,
+      4,
+      2
+    ],
+    "index": 5,
+    "shots": 4096,
+    "active_physical_qubits": [
+      2,
+      3,
+      4,
+      16
+    ]
+  },
+  {
+    "case": "B4-C4",
+    "route": "compiled",
+    "seed_transpiler": 29,
+    "k": 0,
+    "K": 452,
+    "alpha": 0.125,
+    "ideal": 0.12500000000000003,
+    "logical_qubits": 6,
+    "offset_qubits": 6,
+    "logical_operations": {
+      "h": 6,
+      "measure": 6
+    },
+    "depth": 4,
+    "two_qubit_gates": 0,
+    "operations": {
+      "rz": 12,
+      "sx": 6,
+      "measure": 6
+    },
+    "estimated_circuit_seconds": 1.6839999999999999e-06,
+    "compilation_seconds": 0.004680900019593537,
+    "layout": [
+      3,
+      16,
+      2,
+      23,
+      22,
+      4
+    ],
+    "index": 6,
+    "shots": 4096,
+    "active_physical_qubits": [
+      2,
+      3,
+      4,
+      16,
+      22,
+      23
+    ]
+  },
+  {
+    "case": "B4-C4",
+    "route": "compiled",
+    "seed_transpiler": 29,
+    "k": 1,
+    "K": 452,
+    "alpha": 0.125,
+    "ideal": 0.7812500000000001,
+    "logical_qubits": 6,
+    "offset_qubits": 6,
+    "logical_operations": {
+      "h": 18,
+      "x": 12,
+      "measure": 6,
+      "diagonal": 1,
+      "mcphase": 1
+    },
+    "depth": 714,
+    "two_qubit_gates": 274,
+    "operations": {
+      "sx": 568,
+      "rz": 336,
+      "cz": 274,
+      "x": 6,
+      "measure": 6
+    },
+    "estimated_circuit_seconds": 2.371999999999989e-05,
+    "compilation_seconds": 0.06280139996670187,
+    "layout": [
+      16,
+      3,
+      4,
+      2,
+      23,
+      22
+    ],
+    "index": 7,
+    "shots": 4096,
+    "active_physical_qubits": [
+      2,
+      3,
+      4,
+      16,
+      22,
+      23
+    ]
+  },
+  {
+    "case": "B5-C4",
+    "route": "compiled",
+    "seed_transpiler": 29,
+    "k": 0,
+    "K": 596,
+    "alpha": 0.125,
+    "ideal": 0.12500000000000003,
+    "logical_qubits": 8,
+    "offset_qubits": 8,
+    "logical_operations": {
+      "h": 8,
+      "measure": 8
+    },
+    "depth": 4,
+    "two_qubit_gates": 0,
+    "operations": {
+      "rz": 16,
+      "sx": 8,
+      "measure": 8
+    },
+    "estimated_circuit_seconds": 1.6839999999999999e-06,
+    "compilation_seconds": 0.004314000019803643,
+    "layout": [
+      132,
+      131,
+      133,
+      130,
+      119,
+      134,
+      135,
+      138
+    ],
+    "index": 8,
+    "shots": 4096,
+    "active_physical_qubits": [
+      119,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      138
+    ]
+  },
+  {
+    "case": "B5-C4",
+    "route": "compiled",
+    "seed_transpiler": 29,
+    "k": 1,
+    "K": 596,
+    "alpha": 0.125,
+    "ideal": 0.7812500000000001,
+    "logical_qubits": 8,
+    "offset_qubits": 8,
+    "logical_operations": {
+      "h": 24,
+      "x": 16,
+      "measure": 8,
+      "diagonal": 1,
+      "mcphase": 1
+    },
+    "depth": 2387,
+    "two_qubit_gates": 1003,
+    "operations": {
+      "sx": 2067,
+      "rz": 1006,
+      "cz": 1003,
+      "measure": 8,
+      "x": 5
+    },
+    "estimated_circuit_seconds": 8.052399999999881e-05,
+    "compilation_seconds": 0.21531150001101196,
+    "layout": [
+      132,
+      131,
+      130,
+      138,
+      133,
+      119,
+      134,
+      135
+    ],
+    "index": 9,
+    "shots": 4096,
+    "active_physical_qubits": [
+      119,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      138
+    ]
+  },
+  {
+    "case": "B6-C4",
+    "route": "compiled",
+    "seed_transpiler": 29,
+    "k": 0,
+    "K": 770,
+    "alpha": 0.125,
+    "ideal": 0.12500000000000003,
+    "logical_qubits": 10,
+    "offset_qubits": 10,
+    "logical_operations": {
+      "h": 10,
+      "measure": 10
+    },
+    "depth": 4,
+    "two_qubit_gates": 0,
+    "operations": {
+      "rz": 20,
+      "sx": 10,
+      "measure": 10
+    },
+    "estimated_circuit_seconds": 1.6839999999999999e-06,
+    "compilation_seconds": 0.004855299950577319,
+    "layout": [
+      132,
+      131,
+      133,
+      130,
+      138,
+      151,
+      134,
+      152,
+      129,
+      119
+    ],
+    "index": 10,
+    "shots": 4096,
+    "active_physical_qubits": [
+      119,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      138,
+      151,
+      152
+    ]
+  },
+  {
+    "case": "B6-C4",
+    "route": "compiled",
+    "seed_transpiler": 29,
+    "k": 1,
+    "K": 770,
+    "alpha": 0.125,
+    "ideal": 0.7812500000000001,
+    "logical_qubits": 10,
+    "offset_qubits": 10,
+    "logical_operations": {
+      "h": 30,
+      "x": 20,
+      "measure": 10,
+      "diagonal": 1,
+      "mcphase": 1
+    },
+    "depth": 8097,
+    "two_qubit_gates": 2954,
+    "operations": {
+      "sx": 6447,
+      "rz": 3571,
+      "cz": 2954,
+      "x": 19,
+      "measure": 10
+    },
+    "estimated_circuit_seconds": 0.00023935199999997934,
+    "compilation_seconds": 0.7014807000523433,
+    "layout": [
+      132,
+      133,
+      134,
+      119,
+      131,
+      138,
+      130,
+      129,
+      151,
+      152
+    ],
+    "index": 11,
+    "shots": 4096,
+    "active_physical_qubits": [
+      119,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      138,
+      151,
+      152
+    ]
+  }
+]

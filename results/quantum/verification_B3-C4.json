@@ -1,0 +1,91 @@
+{
+  "case": "B3-C4",
+  "N": 16,
+  "thresholds": [
+    206,
+    207,
+    315,
+    464
+  ],
+  "sum_basis_checks": 16,
+  "bit_phase_basis_checks": 128,
+  "errors": {
+    "sum": 2.8709999424280104e-15,
+    "bit": 4.3784326228831264e-15,
+    "phase": 4.567335997771571e-15
+  },
+  "amplification": [
+    {
+      "K": 207,
+      "k": 0,
+      "alpha": 0.0625,
+      "observed": 0.06250000000000003,
+      "ideal": 0.0625,
+      "workspace_leakage": 0.0
+    },
+    {
+      "K": 207,
+      "k": 1,
+      "alpha": 0.0625,
+      "observed": 0.4726562500000034,
+      "ideal": 0.47265625,
+      "workspace_leakage": 5.88146196180427e-31
+    },
+    {
+      "K": 207,
+      "k": 2,
+      "alpha": 0.0625,
+      "observed": 0.9084472656250129,
+      "ideal": 0.908447265625,
+      "workspace_leakage": 1.5518382771076691e-30
+    },
+    {
+      "K": 207,
+      "k": 3,
+      "alpha": 0.0625,
+      "observed": 0.9613189697265832,
+      "ideal": 0.9613189697265625,
+      "workspace_leakage": 2.7145582552034162e-30
+    },
+    {
+      "K": 315,
+      "k": 0,
+      "alpha": 0.25,
+      "observed": 0.2500000000000001,
+      "ideal": 0.25,
+      "workspace_leakage": 0.0
+    },
+    {
+      "K": 315,
+      "k": 1,
+      "alpha": 0.25,
+      "observed": 1.000000000000007,
+      "ideal": 1.0,
+      "workspace_leakage": 6.635174847701657e-31
+    },
+    {
+      "K": 315,
+      "k": 2,
+      "alpha": 0.25,
+      "observed": 0.2500000000000035,
+      "ideal": 0.24999999999999956,
+      "workspace_leakage": 1.5790988955893554e-30
+    },
+    {
+      "K": 315,
+      "k": 3,
+      "alpha": 0.25,
+      "observed": 0.25000000000000555,
+      "ideal": 0.2500000000000001,
+      "workspace_leakage": 2.202497897950407e-30
+    }
+  ],
+  "wall_seconds": 46.390608399990015,
+  "resources": {
+    "offset_qubits": 4,
+    "sum_qubits": 10,
+    "base": 67,
+    "divisor": 1,
+    "sum_bound": 653
+  }
+}

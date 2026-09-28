@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript when using this research archive."
+title: "A Gate-Based Quantum Oracle for Network Signal Coordination Using Grover's Algorithm"
+type: software
+authors:
+  - family-names: Dixit
+    given-names: Vinayak
+  - family-names: Xu
+    given-names: Junxiang
+  - family-names: Pech
+    given-names: Richard
+abstract: "Code and experimental records for queue-based signal-offset coordination, reversible quantum oracles, PointQ evaluation and IBM hardware measurements."

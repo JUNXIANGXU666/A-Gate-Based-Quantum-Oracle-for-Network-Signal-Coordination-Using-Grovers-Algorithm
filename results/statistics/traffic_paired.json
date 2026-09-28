@@ -1,0 +1,578 @@
+[
+  {
+    "case": "B4-0.65",
+    "baseline": "synchronised",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -6.060713716360244,
+        "lo": -6.515594219215193,
+        "hi": -5.605833213505295,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -2.4490243055555396,
+        "lo": -2.6380280503127382,
+        "hi": -2.260020560798341,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": -1.5,
+        "lo": -4.067084081559438,
+        "hi": 1.0670840815594382,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "B4-0.65",
+    "baseline": "progression",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": 0.5948276546423137,
+        "lo": 0.04315318802577617,
+        "hi": 1.1465021212588513,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": 0.18409027777777576,
+        "lo": -0.03696918701383839,
+        "hi": 0.4051497425693899,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": 0.125,
+        "lo": -1.9917538419017693,
+        "hi": 2.2417538419017693,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "B4-1",
+    "baseline": "synchronised",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -2.6301932429339843,
+        "lo": -2.8924060843482704,
+        "hi": -2.367980401519698,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -1.6888402777777243,
+        "lo": -1.8509547319489823,
+        "hi": -1.5267258236064662,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": -1.5000000000000284,
+        "lo": -4.7532771176302795,
+        "hi": 1.7532771176302226,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "B4-1",
+    "baseline": "progression",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": 2.7549989406680413,
+        "lo": 2.082377009184299,
+        "hi": 3.427620872151784,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": 1.6000486111110952,
+        "lo": 1.1867515069364238,
+        "hi": 2.0133457152857663,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": -1.25,
+        "lo": -3.0234681886945878,
+        "hi": 0.5234681886945878,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "B4-1.35",
+    "baseline": "synchronised",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -3.231930513401383,
+        "lo": -3.697992821382327,
+        "hi": -2.7658682054204387,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -2.976059027777837,
+        "lo": -3.409892065099413,
+        "hi": -2.542225990456261,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": 1.5,
+        "lo": -2.2119974490746634,
+        "hi": 5.211997449074664,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "B4-1.35",
+    "baseline": "progression",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": 1.0004706157338665,
+        "lo": 0.5090116652740836,
+        "hi": 1.4919295661936496,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": 0.8276145833331565,
+        "lo": 0.40481159242065884,
+        "hi": 1.2504175742456543,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": 1.75,
+        "lo": -1.5262147256678182,
+        "hi": 5.026214725667819,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "B4-1.55",
+    "baseline": "synchronised",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -0.6770266620661829,
+        "lo": -1.1944584572934702,
+        "hi": -0.15959486683889568,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -2.7161041666664953,
+        "lo": -3.2327742894432867,
+        "hi": -2.199434043889704,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": 0.5,
+        "lo": -2.218216133101996,
+        "hi": 3.218216133101996,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "B4-1.55",
+    "baseline": "progression",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": 0.3916090368861447,
+        "lo": -0.033979593805181785,
+        "hi": 0.8171976675774711,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": 0.5765381944443533,
+        "lo": 0.1489227388078188,
+        "hi": 1.0041536500808879,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": 0.0,
+        "lo": -2.4064792576159384,
+        "hi": 2.4064792576159384,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "R4-0.65",
+    "baseline": "synchronised",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -0.022633314170012575,
+        "lo": -0.1934931043111581,
+        "hi": 0.14822647597113295,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": 0.0003645833333383308,
+        "lo": -0.06991698453445082,
+        "hi": 0.07064615120112748,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": 0.0,
+        "lo": -0.44687197955905245,
+        "hi": 0.44687197955905245,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "R4-0.65",
+    "baseline": "progression",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": 12.186093565284349,
+        "lo": 11.717927815040854,
+        "hi": 12.654259315527844,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": 4.916951388888908,
+        "lo": 4.642113265695475,
+        "hi": 5.191789512082341,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": 0.625,
+        "lo": -3.4691253819686576,
+        "hi": 4.719125381968658,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "R4-1",
+    "baseline": "synchronised",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -0.9764379648004322,
+        "lo": -1.2023394391540065,
+        "hi": -0.7505364904468579,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -0.6008333333333713,
+        "lo": -0.7257309291817317,
+        "hi": -0.47593573748501095,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": -0.375,
+        "lo": -2.1589933148580545,
+        "hi": 1.4089933148580545,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "R4-1",
+    "baseline": "progression",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": 8.75466398062797,
+        "lo": 7.976995916475664,
+        "hi": 9.532332044780278,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": 5.392215277777789,
+        "lo": 4.920096207485845,
+        "hi": 5.864334348069733,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": -2.25,
+        "lo": -7.418089416591469,
+        "hi": 2.918089416591469,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "R4-1.35",
+    "baseline": "synchronised",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -6.897273813751436,
+        "lo": -7.612699706849221,
+        "hi": -6.181847920653651,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -6.002927083333384,
+        "lo": -6.594231526540362,
+        "hi": -5.4116226401264065,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": 2.75,
+        "lo": 0.6659278292242807,
+        "hi": 4.83407217077572,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "R4-1.35",
+    "baseline": "progression",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": 0.8601086079910472,
+        "lo": 0.3636938669243609,
+        "hi": 1.3565233490577335,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": 0.7525069444443719,
+        "lo": 0.39957657042014066,
+        "hi": 1.1054373184686033,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": 1.5,
+        "lo": -0.4478697995978831,
+        "hi": 3.447869799597883,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "R4-1.55",
+    "baseline": "synchronised",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -2.251063749939549,
+        "lo": -2.810691470668919,
+        "hi": -1.691436029210179,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -3.826288194444171,
+        "lo": -4.3505788938123375,
+        "hi": -3.3019974950760043,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": -2.0,
+        "lo": -5.996944494135751,
+        "hi": 1.996944494135751,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "R4-1.55",
+    "baseline": "progression",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": 1.4529562700976513,
+        "lo": 1.2327886025820587,
+        "hi": 1.6731239376132439,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": 2.0583819444444114,
+        "lo": 1.8849617232449463,
+        "hi": 2.2318021656438765,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": -0.5,
+        "lo": -3.2907146178866125,
+        "hi": 2.2907146178866125,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "U4-0.65",
+    "baseline": "synchronised",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -11.386604767906075,
+        "lo": -12.39312329441138,
+        "hi": -10.38008624140077,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -3.517326388888877,
+        "lo": -3.8523537441267015,
+        "hi": -3.182299033651052,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": -2.0,
+        "lo": -5.971885033971536,
+        "hi": 1.9718850339715361,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "U4-0.65",
+    "baseline": "progression",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -1.2804984428520927,
+        "lo": -1.5171924566498023,
+        "hi": -1.043804429054383,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -0.39349999999999297,
+        "lo": -0.4675303676301654,
+        "hi": -0.3194696323698205,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": -0.625,
+        "lo": -1.8839978628012124,
+        "hi": 0.6339978628012124,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "U4-1",
+    "baseline": "synchronised",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -11.376152303786805,
+        "lo": -12.041438956456993,
+        "hi": -10.710865651116617,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -5.473204861111071,
+        "lo": -5.807809897399802,
+        "hi": -5.13859982482234,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": 1.0,
+        "lo": -2.5749758364724196,
+        "hi": 4.57497583647242,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "U4-1",
+    "baseline": "progression",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -0.38112638166949875,
+        "lo": -0.4892168158664565,
+        "hi": -0.273035947472541,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -0.18247916666667519,
+        "lo": -0.2346071989644162,
+        "hi": -0.13035113436893417,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": 0.25,
+        "lo": -0.7239348997989415,
+        "hi": 1.2239348997989414,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "U4-1.35",
+    "baseline": "synchronised",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -11.436138261420304,
+        "lo": -12.385405841427334,
+        "hi": -10.486870681413274,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -7.689548611111138,
+        "lo": -8.168174626238493,
+        "hi": -7.210922595983784,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": -0.25,
+        "lo": -3.370113795698408,
+        "hi": 2.870113795698408,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "U4-1.35",
+    "baseline": "progression",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -0.6842058442398677,
+        "lo": -0.763036690709566,
+        "hi": -0.6053749977701695,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -0.4682187499999917,
+        "lo": -0.5108610810872939,
+        "hi": -0.42557641891268944,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": -0.125,
+        "lo": -1.7009762580875507,
+        "hi": 1.4509762580875507,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "U4-1.55",
+    "baseline": "synchronised",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -10.255666436888152,
+        "lo": -11.141304855349436,
+        "hi": -9.370028018426868,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -9.381958333333246,
+        "lo": -9.955710116202619,
+        "hi": -8.808206550463874,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": -0.5,
+        "lo": -2.28748791823621,
+        "hi": 1.2874879182362098,
+        "n": 8
+      }
+    }
+  },
+  {
+    "case": "U4-1.55",
+    "baseline": "progression",
+    "difference": {
+      "completed_mean_delay": {
+        "mean": -2.509661199226226,
+        "lo": -3.038398786265529,
+        "hi": -1.9809236121869231,
+        "n": 8
+      },
+      "mean_network_queue": {
+        "mean": -1.9156006944443327,
+        "lo": -2.331816562030445,
+        "hi": -1.4993848268582204,
+        "n": 8
+      },
+      "throughput_vehicles_hour": {
+        "mean": -0.375,
+        "lo": -1.46389232080494,
+        "hi": 0.7138923208049399,
+        "n": 8
+      }
+    }
+  }
+]

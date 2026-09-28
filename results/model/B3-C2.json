@@ -1,0 +1,100 @@
+{
+  "scenario": {
+    "name": "B3-C2",
+    "n": 3,
+    "family": "bidirectional",
+    "states": 2,
+    "cycle": 60,
+    "load": 1.0,
+    "saturation": 0.5,
+    "quantum_unit": 1.0
+  },
+  "greens": [
+    32,
+    36,
+    30
+  ],
+  "links": [
+    {
+      "i": 0,
+      "j": 1,
+      "flow": 0.18,
+      "travel": 16,
+      "direction": "forward"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "flow": 0.18,
+      "travel": 11,
+      "direction": "forward"
+    },
+    {
+      "i": 2,
+      "j": 1,
+      "flow": 0.13,
+      "travel": 22,
+      "direction": "reverse"
+    },
+    {
+      "i": 1,
+      "j": 0,
+      "flow": 0.13,
+      "travel": 14,
+      "direction": "reverse"
+    }
+  ],
+  "continuous": [
+    [
+      43.5999999999999,
+      136.02000000000007
+    ],
+    [
+      75.17999999999931,
+      176.06000000000023
+    ],
+    [
+      37.64000000000005,
+      47.78000000000007
+    ],
+    [
+      49.99000000000008,
+      89.90999999999993
+    ]
+  ],
+  "integer": [
+    [
+      44,
+      136
+    ],
+    [
+      75,
+      176
+    ],
+    [
+      38,
+      48
+    ],
+    [
+      50,
+      90
+    ]
+  ],
+  "construction_seconds": 0.022379200090654194,
+  "exact": {
+    "N": 4,
+    "minimum": 207,
+    "best_offsets": [
+      0,
+      0,
+      0
+    ],
+    "continuous_at_best": 206.40999999999934,
+    "continuous_minimum": 206.40999999999934,
+    "minimum_count": 1,
+    "uniform_cost": 207,
+    "independent_link_minima_sum": 207,
+    "conflict_gap": 0,
+    "enumeration_seconds": 0.00011220003943890333
+  }
+}

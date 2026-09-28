@@ -1,0 +1,58 @@
+{
+  "case": "B3-C2",
+  "N": 4,
+  "thresholds": [
+    206,
+    207,
+    450
+  ],
+  "sum_basis_checks": 4,
+  "bit_phase_basis_checks": 24,
+  "errors": {
+    "sum": 2.4017851741333282e-15,
+    "bit": 3.386017852562677e-15,
+    "phase": 3.474042253933936e-15
+  },
+  "amplification": [
+    {
+      "K": 207,
+      "k": 0,
+      "alpha": 0.25,
+      "observed": 0.2500000000000001,
+      "ideal": 0.25,
+      "workspace_leakage": 0.0
+    },
+    {
+      "K": 207,
+      "k": 1,
+      "alpha": 0.25,
+      "observed": 1.0000000000000053,
+      "ideal": 1.0,
+      "workspace_leakage": 3.8069220620555154e-31
+    },
+    {
+      "K": 207,
+      "k": 2,
+      "alpha": 0.25,
+      "observed": 0.2500000000000032,
+      "ideal": 0.24999999999999956,
+      "workspace_leakage": 5.852856762072202e-31
+    },
+    {
+      "K": 207,
+      "k": 3,
+      "alpha": 0.25,
+      "observed": 0.2500000000000032,
+      "ideal": 0.2500000000000001,
+      "workspace_leakage": 5.916054407490447e-31
+    }
+  ],
+  "wall_seconds": 2.9392303000204265,
+  "resources": {
+    "offset_qubits": 2,
+    "sum_qubits": 8,
+    "base": 207,
+    "divisor": 1,
+    "sum_bound": 243
+  }
+}

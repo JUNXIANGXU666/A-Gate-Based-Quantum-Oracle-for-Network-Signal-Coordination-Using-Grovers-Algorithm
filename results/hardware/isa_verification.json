@@ -1,0 +1,86 @@
+[
+  {
+    "case": "B3-C2",
+    "route": "reversible",
+    "k": 0,
+    "active_qubits": 2,
+    "probability_error": 1.1102230246251565e-16
+  },
+  {
+    "case": "B3-C2",
+    "route": "reversible",
+    "k": 1,
+    "active_qubits": 10,
+    "probability_error": 4.3520742565306136e-14
+  },
+  {
+    "case": "B3-C4",
+    "route": "reversible",
+    "k": 0,
+    "active_qubits": 4,
+    "probability_error": 1.942890293094024e-16
+  },
+  {
+    "case": "B3-C4",
+    "route": "reversible",
+    "k": 1,
+    "active_qubits": 14,
+    "probability_error": 7.362999099314038e-13
+  },
+  {
+    "case": "B3-C4",
+    "route": "compiled",
+    "k": 0,
+    "active_qubits": 4,
+    "probability_error": 1.942890293094024e-16
+  },
+  {
+    "case": "B3-C4",
+    "route": "compiled",
+    "k": 1,
+    "active_qubits": 4,
+    "probability_error": 1.5543122344752192e-15
+  },
+  {
+    "case": "B4-C4",
+    "route": "compiled",
+    "k": 0,
+    "active_qubits": 6,
+    "probability_error": 0.0
+  },
+  {
+    "case": "B4-C4",
+    "route": "compiled",
+    "k": 1,
+    "active_qubits": 6,
+    "probability_error": 4.551914400963142e-15
+  },
+  {
+    "case": "B5-C4",
+    "route": "compiled",
+    "k": 0,
+    "active_qubits": 8,
+    "probability_error": 3.885780586188048e-16
+  },
+  {
+    "case": "B5-C4",
+    "route": "compiled",
+    "k": 1,
+    "active_qubits": 8,
+    "probability_error": 1.3211653993039363e-14
+  },
+  {
+    "case": "B6-C4",
+    "route": "compiled",
+    "k": 0,
+    "active_qubits": 10,
+    "probability_error": 8.326672684688674e-17
+  },
+  {
+    "case": "B6-C4",
+    "route": "compiled",
+    "k": 1,
+    "active_qubits": 10,
+    "probability_error": 5.440092820663267e-15
+  }
+]

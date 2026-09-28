@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+vendor/
+pq/
+configs/
+manuscript/
+.env
+results/hardware/initial_usage.json
+results/hardware/backend_configuration.json
+results/hardware/backend_properties.json

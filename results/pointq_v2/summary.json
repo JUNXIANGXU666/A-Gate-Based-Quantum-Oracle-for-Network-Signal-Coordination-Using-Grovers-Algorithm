@@ -1,0 +1,362 @@
+[
+  {
+    "case": "U4-0.65",
+    "plan": "synchronised",
+    "completed_mean_delay": 27.5708286513251,
+    "completed_mean_delay_ci95": 0.7100556595452849,
+    "mean_network_queue": 8.74522569444445,
+    "mean_network_queue_ci95": 0.33752758162833013,
+    "throughput_vehicles_hour": 1080.625,
+    "throughput_vehicles_hour_ci95": 20.049256362248588
+  },
+  {
+    "case": "U4-1",
+    "plan": "synchronised",
+    "completed_mean_delay": 30.91136653898753,
+    "completed_mean_delay_ci95": 0.8192657290412441,
+    "mean_network_queue": 15.280680555555517,
+    "mean_network_queue_ci95": 0.42219798311467793,
+    "throughput_vehicles_hour": 1660.5,
+    "throughput_vehicles_hour_ci95": 28.2131625404614
+  },
+  {
+    "case": "U4-1.35",
+    "plan": "synchronised",
+    "completed_mean_delay": 56.350139705392905,
+    "completed_mean_delay_ci95": 7.452063157956154,
+    "mean_network_queue": 37.770361111111114,
+    "mean_network_queue_ci95": 4.830434867231976,
+    "throughput_vehicles_hour": 2237.625,
+    "throughput_vehicles_hour_ci95": 36.61607346488566
+  },
+  {
+    "case": "U4-1.55",
+    "plan": "synchronised",
+    "completed_mean_delay": 166.05230111181373,
+    "completed_mean_delay_ci95": 20.48679090491446,
+    "mean_network_queue": 134.8741666666669,
+    "mean_network_queue_ci95": 14.336145209130182,
+    "throughput_vehicles_hour": 2458.625,
+    "throughput_vehicles_hour_ci95": 34.4524602906285
+  },
+  {
+    "case": "U4-0.65",
+    "plan": "progression",
+    "completed_mean_delay": 17.464722326271115,
+    "completed_mean_delay_ci95": 0.46842050817841363,
+    "mean_network_queue": 5.621399305555567,
+    "mean_network_queue_ci95": 0.16843355822607162,
+    "throughput_vehicles_hour": 1079.25,
+    "throughput_vehicles_hour_ci95": 20.038359434239844
+  },
+  {
+    "case": "U4-1",
+    "plan": "progression",
+    "completed_mean_delay": 19.916340616870222,
+    "completed_mean_delay_ci95": 0.42526462431186446,
+    "mean_network_queue": 9.98995486111112,
+    "mean_network_queue_ci95": 0.12115892323173337,
+    "throughput_vehicles_hour": 1661.25,
+    "throughput_vehicles_hour_ci95": 29.339961671419225
+  },
+  {
+    "case": "U4-1.35",
+    "plan": "progression",
+    "completed_mean_delay": 45.59820728821248,
+    "completed_mean_delay_ci95": 7.347984983055034,
+    "mean_network_queue": 30.54903124999997,
+    "mean_network_queue_ci95": 4.792484347983334,
+    "throughput_vehicles_hour": 2237.5,
+    "throughput_vehicles_hour_ci95": 37.42536154442324
+  },
+  {
+    "case": "U4-1.55",
+    "plan": "progression",
+    "completed_mean_delay": 158.3062958741518,
+    "completed_mean_delay_ci95": 21.16437150419258,
+    "mean_network_queue": 127.407809027778,
+    "mean_network_queue_ci95": 14.768870695734638,
+    "throughput_vehicles_hour": 2458.5,
+    "throughput_vehicles_hour_ci95": 34.74411679932781
+  },
+  {
+    "case": "U4-0.65",
+    "plan": "optimised",
+    "completed_mean_delay": 16.184223883419023,
+    "completed_mean_delay_ci95": 0.4430309881735315,
+    "mean_network_queue": 5.2278993055555745,
+    "mean_network_queue_ci95": 0.14764447668745245,
+    "throughput_vehicles_hour": 1078.625,
+    "throughput_vehicles_hour_ci95": 19.539793486665815
+  },
+  {
+    "case": "U4-1",
+    "plan": "optimised",
+    "completed_mean_delay": 19.535214235200726,
+    "completed_mean_delay_ci95": 0.4428649257730201,
+    "mean_network_queue": 9.807475694444445,
+    "mean_network_queue_ci95": 0.14407370717071488,
+    "throughput_vehicles_hour": 1661.5,
+    "throughput_vehicles_hour_ci95": 29.156470430277842
+  },
+  {
+    "case": "U4-1.35",
+    "plan": "optimised",
+    "completed_mean_delay": 44.91400144397261,
+    "completed_mean_delay_ci95": 7.404920910637067,
+    "mean_network_queue": 30.080812499999976,
+    "mean_network_queue_ci95": 4.828900078765253,
+    "throughput_vehicles_hour": 2237.375,
+    "throughput_vehicles_hour_ci95": 37.33170095249325
+  },
+  {
+    "case": "U4-1.55",
+    "plan": "optimised",
+    "completed_mean_delay": 155.79663467492557,
+    "completed_mean_delay_ci95": 21.214334343751947,
+    "mean_network_queue": 125.49220833333366,
+    "mean_network_queue_ci95": 14.79852156424347,
+    "throughput_vehicles_hour": 2458.125,
+    "throughput_vehicles_hour_ci95": 35.30129542850289
+  },
+  {
+    "case": "B4-0.65",
+    "plan": "synchronised",
+    "completed_mean_delay": 30.19098128270821,
+    "completed_mean_delay_ci95": 0.449814993249717,
+    "mean_network_queue": 12.422704861111095,
+    "mean_network_queue_ci95": 0.39923540727474693,
+    "throughput_vehicles_hour": 1391.25,
+    "throughput_vehicles_hour_ci95": 28.152048047504643
+  },
+  {
+    "case": "B4-1",
+    "plan": "synchronised",
+    "completed_mean_delay": 33.20526099872906,
+    "completed_mean_delay_ci95": 0.5881265692822255,
+    "mean_network_queue": 21.35850347222216,
+    "mean_network_queue_ci95": 0.9130699281239416,
+    "throughput_vehicles_hour": 2141.125,
+    "throughput_vehicles_hour_ci95": 56.60906348651686
+  },
+  {
+    "case": "B4-1.35",
+    "plan": "synchronised",
+    "completed_mean_delay": 54.00162850586453,
+    "completed_mean_delay_ci95": 5.92317927926038,
+    "mean_network_queue": 47.168437499999925,
+    "mean_network_queue_ci95": 4.677756555839818,
+    "throughput_vehicles_hour": 2899.625,
+    "throughput_vehicles_hour_ci95": 45.36342164018233
+  },
+  {
+    "case": "B4-1.55",
+    "plan": "synchronised",
+    "completed_mean_delay": 138.93634528648266,
+    "completed_mean_delay_ci95": 15.348088329282128,
+    "mean_network_queue": 147.20045486111155,
+    "mean_network_queue_ci95": 14.39334977582103,
+    "throughput_vehicles_hour": 3218.0,
+    "throughput_vehicles_hour_ci95": 51.5299781256649
+  },
+  {
+    "case": "B4-0.65",
+    "plan": "progression",
+    "completed_mean_delay": 23.53543991170565,
+    "completed_mean_delay_ci95": 0.5835989439497528,
+    "mean_network_queue": 9.78959027777778,
+    "mean_network_queue_ci95": 0.37561739669380384,
+    "throughput_vehicles_hour": 1389.625,
+    "throughput_vehicles_hour_ci95": 29.53393613929664
+  },
+  {
+    "case": "B4-1",
+    "plan": "progression",
+    "completed_mean_delay": 27.82006881512703,
+    "completed_mean_delay_ci95": 0.7517239953110118,
+    "mean_network_queue": 18.06961458333334,
+    "mean_network_queue_ci95": 0.9244185956612819,
+    "throughput_vehicles_hour": 2140.875,
+    "throughput_vehicles_hour_ci95": 56.02933111952067
+  },
+  {
+    "case": "B4-1.35",
+    "plan": "progression",
+    "completed_mean_delay": 49.76922737672928,
+    "completed_mean_delay_ci95": 5.880420342389636,
+    "mean_network_queue": 43.36476388888893,
+    "mean_network_queue_ci95": 4.707946169893815,
+    "throughput_vehicles_hour": 2899.375,
+    "throughput_vehicles_hour_ci95": 45.43599832277
+  },
+  {
+    "case": "B4-1.55",
+    "plan": "progression",
+    "completed_mean_delay": 137.86770958753033,
+    "completed_mean_delay_ci95": 15.573137056611777,
+    "mean_network_queue": 143.90781250000072,
+    "mean_network_queue_ci95": 14.416965093009567,
+    "throughput_vehicles_hour": 3218.5,
+    "throughput_vehicles_hour_ci95": 49.10714388360472
+  },
+  {
+    "case": "B4-0.65",
+    "plan": "optimised",
+    "completed_mean_delay": 24.130267566347968,
+    "completed_mean_delay_ci95": 0.47828075720297136,
+    "mean_network_queue": 9.973680555555557,
+    "mean_network_queue_ci95": 0.3502434018008916,
+    "throughput_vehicles_hour": 1389.75,
+    "throughput_vehicles_hour_ci95": 30.205207314932068
+  },
+  {
+    "case": "B4-1",
+    "plan": "optimised",
+    "completed_mean_delay": 30.57506775579507,
+    "completed_mean_delay_ci95": 0.7017517063927362,
+    "mean_network_queue": 19.669663194444436,
+    "mean_network_queue_ci95": 0.9329965994755399,
+    "throughput_vehicles_hour": 2139.625,
+    "throughput_vehicles_hour_ci95": 56.79483995527795
+  },
+  {
+    "case": "B4-1.35",
+    "plan": "optimised",
+    "completed_mean_delay": 50.76969799246315,
+    "completed_mean_delay_ci95": 5.804744712611128,
+    "mean_network_queue": 44.19237847222209,
+    "mean_network_queue_ci95": 4.59355359938301,
+    "throughput_vehicles_hour": 2901.125,
+    "throughput_vehicles_hour_ci95": 45.25213196431914
+  },
+  {
+    "case": "B4-1.55",
+    "plan": "optimised",
+    "completed_mean_delay": 138.25931862441644,
+    "completed_mean_delay_ci95": 15.523431609940998,
+    "mean_network_queue": 144.48435069444503,
+    "mean_network_queue_ci95": 14.44793196061324,
+    "throughput_vehicles_hour": 3218.5,
+    "throughput_vehicles_hour_ci95": 50.25670972340759
+  },
+  {
+    "case": "R4-0.65",
+    "plan": "synchronised",
+    "completed_mean_delay": 39.299682392634146,
+    "completed_mean_delay_ci95": 0.5510820333296487,
+    "mean_network_queue": 16.506548611111096,
+    "mean_network_queue_ci95": 0.5805239798957766,
+    "throughput_vehicles_hour": 1410.75,
+    "throughput_vehicles_hour_ci95": 32.78271238304637
+  },
+  {
+    "case": "R4-1",
+    "plan": "synchronised",
+    "completed_mean_delay": 41.48117977228636,
+    "completed_mean_delay_ci95": 0.7230095391831265,
+    "mean_network_queue": 27.15018402777782,
+    "mean_network_queue_ci95": 0.6868506752871192,
+    "throughput_vehicles_hour": 2157.0,
+    "throughput_vehicles_hour_ci95": 22.689481956284006
+  },
+  {
+    "case": "R4-1.35",
+    "plan": "synchronised",
+    "completed_mean_delay": 61.4240909457408,
+    "completed_mean_delay_ci95": 5.982337302944148,
+    "mean_network_queue": 54.22218749999994,
+    "mean_network_queue_ci95": 4.934248024416511,
+    "throughput_vehicles_hour": 2893.5,
+    "throughput_vehicles_hour_ci95": 45.301887995580536
+  },
+  {
+    "case": "R4-1.55",
+    "plan": "synchronised",
+    "completed_mean_delay": 144.77245458541927,
+    "completed_mean_delay_ci95": 15.141297098398939,
+    "mean_network_queue": 154.45862152777812,
+    "mean_network_queue_ci95": 14.922650026981131,
+    "throughput_vehicles_hour": 3219.0,
+    "throughput_vehicles_hour_ci95": 37.51596062982667
+  },
+  {
+    "case": "R4-0.65",
+    "plan": "progression",
+    "completed_mean_delay": 27.090955513179786,
+    "completed_mean_delay_ci95": 0.6846101116414821,
+    "mean_network_queue": 11.589961805555529,
+    "mean_network_queue_ci95": 0.4955361322517819,
+    "throughput_vehicles_hour": 1410.125,
+    "throughput_vehicles_hour_ci95": 31.801582494888017
+  },
+  {
+    "case": "R4-1",
+    "plan": "progression",
+    "completed_mean_delay": 31.750077826857954,
+    "completed_mean_delay_ci95": 0.8148471135052591,
+    "mean_network_queue": 21.157135416666655,
+    "mean_network_queue_ci95": 0.5540004669055982,
+    "throughput_vehicles_hour": 2158.875,
+    "throughput_vehicles_hour_ci95": 20.611591605194782
+  },
+  {
+    "case": "R4-1.35",
+    "plan": "progression",
+    "completed_mean_delay": 53.66670852399832,
+    "completed_mean_delay_ci95": 5.86952911248916,
+    "mean_network_queue": 47.46675347222219,
+    "mean_network_queue_ci95": 4.870594557316863,
+    "throughput_vehicles_hour": 2894.75,
+    "throughput_vehicles_hour_ci95": 46.07930552709692
+  },
+  {
+    "case": "R4-1.55",
+    "plan": "progression",
+    "completed_mean_delay": 141.06843456538206,
+    "completed_mean_delay_ci95": 15.279424127530369,
+    "mean_network_queue": 148.57395138888953,
+    "mean_network_queue_ci95": 14.89928275472897,
+    "throughput_vehicles_hour": 3217.5,
+    "throughput_vehicles_hour_ci95": 40.46351131052642
+  },
+  {
+    "case": "R4-0.65",
+    "plan": "optimised",
+    "completed_mean_delay": 39.27704907846413,
+    "completed_mean_delay_ci95": 0.6594541259428626,
+    "mean_network_queue": 16.506913194444436,
+    "mean_network_queue_ci95": 0.6392639837754156,
+    "throughput_vehicles_hour": 1410.75,
+    "throughput_vehicles_hour_ci95": 32.79489303922186
+  },
+  {
+    "case": "R4-1",
+    "plan": "optimised",
+    "completed_mean_delay": 40.50474180748593,
+    "completed_mean_delay_ci95": 0.7248535341701948,
+    "mean_network_queue": 26.549350694444442,
+    "mean_network_queue_ci95": 0.6695554442509996,
+    "throughput_vehicles_hour": 2156.625,
+    "throughput_vehicles_hour_ci95": 22.231319579015267
+  },
+  {
+    "case": "R4-1.35",
+    "plan": "optimised",
+    "completed_mean_delay": 54.52681713198936,
+    "completed_mean_delay_ci95": 5.928112031654002,
+    "mean_network_queue": 48.21926041666656,
+    "mean_network_queue_ci95": 4.91084369188233,
+    "throughput_vehicles_hour": 2896.25,
+    "throughput_vehicles_hour_ci95": 46.622155983186055
+  },
+  {
+    "case": "R4-1.55",
+    "plan": "optimised",
+    "completed_mean_delay": 142.52139083547968,
+    "completed_mean_delay_ci95": 15.195516744065376,
+    "mean_network_queue": 150.63233333333397,
+    "mean_network_queue_ci95": 14.85529868259722,
+    "throughput_vehicles_hour": 3217.0,
+    "throughput_vehicles_hour_ci95": 38.648613876055066
+  }
+]
