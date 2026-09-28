@@ -1,4 +1,8 @@
 {
+  ".gitattributes": {
+    "bytes": 8,
+    "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+  },
   ".gitignore": {
     "bytes": 185,
     "sha256": "08a6b5f69cdb6f64fc4841dd5a61594772b89701baefa50328c66b7d5aff9b16"
@@ -1628,8 +1632,8 @@
     "sha256": "387781a2ff37d94321141977bc950a5ab3e98b33f9efe1293e6613ca2e0dca8d"
   },
   "scripts/check_archive.py": {
-    "bytes": 2128,
-    "sha256": "7563db089cdd124719e7adc9428bb0343c51d9eab89493fc88e226c11446ded7"
+    "bytes": 2137,
+    "sha256": "f8694ecd2a1dc174a0eea6e5beaf1daa3bf3959b4c34e2de0eb7aaa96ecd180f"
   },
   "scripts/pointq_run.py": {
     "bytes": 4421,

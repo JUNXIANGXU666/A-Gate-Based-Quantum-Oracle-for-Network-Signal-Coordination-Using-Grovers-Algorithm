@@ -16,7 +16,7 @@ def read(path):
 manifest=read('MANIFEST.json')
 for relative,entry in manifest.items():
     data=(ROOT/relative).read_bytes()
-    assert len(data)==entry['bytes']
+    assert len(data)==entry['bytes'],relative
     assert hashlib.sha256(data).hexdigest()==entry['sha256'],relative
 cases=0
 for path in (ROOT/'results/model').glob('*.json'):
