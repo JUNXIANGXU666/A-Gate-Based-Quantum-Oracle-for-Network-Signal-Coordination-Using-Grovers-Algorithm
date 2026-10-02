@@ -41,7 +41,7 @@ def main():
        r'\caption{\rev{Hardware feasible-state probabilities and paired excess amplification.}}\label{tab:hardware-summary}',
        r'{\color{darkred}\small\setlength{\tabcolsep}{4pt}',
        r'\begin{tabular}{@{}llrrrrr@{}}\toprule',
-       r'Case & Circuit & \(K\) & \(\alpha\) & \(P_1^{\mathrm{ideal}}\) & \(\widehat P_0\) & \(\widehat P_1\)\\\midrule',
+       r'Case & Circuit & \(K\) & \(\alpha\) & \(P_1^{\mathrm{ideal}}\) & \(\widehat P_0^{\mathrm{hw}}\) & \(\widehat P_1^{\mathrm{hw}}\)\\\midrule',
        *first,r'\bottomrule\end{tabular}\par\medskip',
        r'\begin{tabular}{@{}llll@{}}\toprule',
        r'Case & Circuit & \(\Delta P\) [95\% interval] & \(R_{\mathrm{ex}}\) [95\% interval]\\\midrule',
@@ -100,7 +100,7 @@ def main():
     for v in precision:
         rows.append(f"{v['case']} & {v['eta']} & {v['sum_qubits']} & {span(v['two_qubit_gates'])} & {v['baseline']['mean']:.4f} & {v['probability']['mean']:.4f} & {estimate(v['excess_retention'])}")
     write('hardware_precision.tex',compact_table('Cost-resolution diagnostics using the full oracle.','tab:hardware-precision','lrrrrrl',
-        r'Case & \(\eta\) & \shortstack{Accumulator\\qubits} & 2Q & \(\widehat P_0\) & \(\widehat P_1\) & \(R_{\mathrm{ex}}\) [95\% interval]',rows,
+        r'Case & \(\eta\) & \shortstack{Accumulator\\qubits} & 2Q & \(\widehat P_0^{\mathrm{hw}}\) & \(\widehat P_1^{\mathrm{hw}}\) & \(R_{\mathrm{ex}}\) [95\% interval]',rows,
         r'Both cases use two offset qubits, \(\alpha=0.25\) and \(P_1^{\mathrm{ideal}}=1\). Each probability averages six observations from two batches and three transpiler seeds. \(\eta\) is in vehicle-seconds per cycle. Every fine-table minimum remains marked at the stated coarser resolution, as verified by enumeration. This marked-set agreement is instance-specific.'))
     rows=[]
     for v in hw+precision:

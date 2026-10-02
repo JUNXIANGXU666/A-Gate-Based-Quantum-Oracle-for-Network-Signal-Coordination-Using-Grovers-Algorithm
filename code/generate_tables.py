@@ -36,7 +36,7 @@ def main():
         d=v['paired_excess']
         rows.append(f"{v['case']} & {CIRCUIT_LABELS[v['route']]} & {v['K']} & {v['alpha']:.3f} & {v['baseline']['mean']:.4f} & {v['probability']['mean']:.4f} & [{d['lo']:.4f}, {d['hi']:.4f}]")
     (OUT/'hardware_summary.tex').write_text(table('Hardware probabilities and uncertainty in the paired increase.','tab:hardware-summary','llrrrrl',
-        r'Case & Circuit & \(K\) & \(\alpha\) & \(\widehat P_0\) & \(\widehat P_1\) & 95\% interval for \(\Delta P\)',rows,
+        r'Case & Circuit & \(K\) & \(\alpha\) & \(\widehat P_0^{\mathrm{hw}}\) & \(\widehat P_1^{\mathrm{hw}}\) & 95\% interval for \(\Delta P\)',rows,
         r'B\(n\)-C\(c\) denotes a bidirectional \(n\)-intersection corridor with \(c\) offset levels. Each mean contains 15 executions of 4096 shots. The full oracle evaluates the link-delay tables reversibly. Intervals use paired batch differences.'),encoding='utf-8')
     rows=[]
     for v in data:

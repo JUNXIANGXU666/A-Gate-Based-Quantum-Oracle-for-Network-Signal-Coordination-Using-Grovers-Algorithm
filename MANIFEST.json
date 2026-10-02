@@ -24,16 +24,16 @@
     "sha256": "fd4ced92f2fb42234ac76d7c6485d84f98fb3aa890fd9089cacedfe0d7932981"
   },
   "code/extension_tables.py": {
-    "bytes": 9009,
-    "sha256": "6220d7fb5e17a099a2de79c704ccc55310e5992ea869c2d8668b0685ff54043f"
+    "bytes": 9065,
+    "sha256": "4c5b0055148c7fee22216ed260e98629fa6b530e4856bee0e67fe05d29886144"
   },
   "code/extract_resco.py": {
     "bytes": 8781,
     "sha256": "52ce1522a1906846122155e7d8b0d76fd7ede1611ab23ed48b23eef81fd54765"
   },
   "code/generate_tables.py": {
-    "bytes": 7389,
-    "sha256": "fb8885a1f70f0218cd0a4bfc91cad32c06c7400ba0bd353fcff8bf05f7606d71"
+    "bytes": 7417,
+    "sha256": "5c7da60e7c95cd928ed7b78f8c0241ab8f71503d40c27fab2c71f36b60089e04"
   },
   "code/optimisation_experiments.py": {
     "bytes": 5548,
