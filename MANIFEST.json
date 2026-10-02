@@ -12,8 +12,8 @@
     "sha256": "e5628a5abe53cbdaf2e07caea4b069bc68c5a5fe245f747f4e20e50c2a4671f8"
   },
   "README.md": {
-    "bytes": 10074,
-    "sha256": "63c4ef8eacc2eeca4f4a8b2f3c9f768e3dc333a2564dc8e71a4e682fe4560a01"
+    "bytes": 10079,
+    "sha256": "4fd7769b2906ff9d9c23003ad6837ce67c7abdc6a3309a5e5b8b5f3ff3624871"
   },
   "code/analyse_evidence.py": {
     "bytes": 6037,
@@ -24,16 +24,16 @@
     "sha256": "fd4ced92f2fb42234ac76d7c6485d84f98fb3aa890fd9089cacedfe0d7932981"
   },
   "code/extension_tables.py": {
-    "bytes": 8781,
-    "sha256": "bfec9422abe3e7f251e22f05bfcd500b2a95e7d2f6dcabf46cc2f4593cb29e95"
+    "bytes": 9009,
+    "sha256": "6220d7fb5e17a099a2de79c704ccc55310e5992ea869c2d8668b0685ff54043f"
   },
   "code/extract_resco.py": {
     "bytes": 8781,
     "sha256": "52ce1522a1906846122155e7d8b0d76fd7ede1611ab23ed48b23eef81fd54765"
   },
   "code/generate_tables.py": {
-    "bytes": 7143,
-    "sha256": "96b3d98a8262b54c68e3749390882e1bed8e8a6b002e5735cd8f6c33701a471e"
+    "bytes": 7389,
+    "sha256": "fb8885a1f70f0218cd0a4bfc91cad32c06c7400ba0bd353fcff8bf05f7606d71"
   },
   "code/optimisation_experiments.py": {
     "bytes": 5548,
@@ -65,7 +65,11 @@
   },
   "code/publication_figures.py": {
     "bytes": 21533,
-    "sha256": "daa7de24da4d781fa9e2365fca1e2fee01dfbc3563a51bcc2312102b92cd57fe"
+    "sha256": "5f2e55305c85199879f84c1c87fdd0d8b7460c569997680fa2509418a5100143"
+  },
+  "code/publication_terms.py": {
+    "bytes": 604,
+    "sha256": "7c35c9597fb00d47b8e398565680e7bb84c22920459b32b387d91c94ee1400cf"
   },
   "code/quantum_oracle.py": {
     "bytes": 4952,

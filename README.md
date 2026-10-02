@@ -19,7 +19,7 @@ The construction evaluates queue-based link costs, adds them reversibly, compare
 | `results/optimisation_extended/` | Four additional comparisons and combined nineteen-instance results |
 | `results/quantum/` | Fine-cost circuit correctness and noiseless amplification |
 | `results/hardware/` | Main IBM comparison: counts, native circuits, layouts and calibration |
-| `results/hardware_precision/` | Coarse-cost full-oracle diagnostics and their validation |
+| `results/hardware_precision/` | Coarse-cost full oracle diagnostics and their validation |
 | `results/statistics/` | Derived traffic, optimisation and hardware summaries |
 
 `MANIFEST.json` identifies the released files by SHA-256. Large PointQ event logs are not distributed. Their hashes, input generation and measurement code support independent reruns. No third-party simulator or benchmark source is redistributed.
@@ -67,9 +67,9 @@ python code/propagation_experiments.py
 python code/optimisation_extension.py
 ```
 
-The last two scripts retain existing per-case results. In a fresh calculation copy, omit their archived per-case JSON files to recompute them. The adaptive Grover comparison samples ideal measurement probabilities. It is not a hardware optimisation run or a measured quantum runtime. Dynamic programming exploits the path or ring structure and checks every reported table minimum.
+The last two scripts retain existing per-case results. In a fresh calculation copy, omit their archived per-case JSON files to recompute them. The ideal adaptive Grover reference samples ideal measurement probabilities. It is not a hardware optimisation run or a measured quantum runtime. Exact dynamic programming exploits the path or ring structure and checks every reported table minimum.
 
-The profile update freezes pairwise tables within each exact inner optimisation. It stops on a fixed plan, a repeated plan or 25 rounds, and returns the last distinct input plan on a cycle. Ten tested scenarios reach a fixed plan and six detect a cycle. No global convergence claim is made. The discrete bandwidth reference exhaustively maximises a flow-weighted common-green criterion under the same fixed cycles and greens. It is not an implementation of the complete MAXBAND or MULTIBAND formulations.
+The profile update freezes pairwise tables within each exact inner optimisation. It stops on a fixed plan, a repeated plan or 25 rounds, and returns the last distinct input plan on a cycle. Ten tested scenarios reach a fixed plan and six detect a cycle. No global convergence claim is made. The bandwidth reference exhaustively maximises a flow-weighted common-green criterion under the same fixed cycles and greens. It is not an implementation of the complete MAXBAND or MULTIBAND formulations.
 
 ## RESCO Corridor Projection
 
@@ -91,11 +91,11 @@ These restartable commands skip existing per-run result files. To rerun all simu
 
 There are four networks, four demand levels, five plans and eight common-arrival seeds, giving 640 runs. Each lasts 4800 simulated seconds with a 1200-second initial period. The wrapper changes configurations and arrival seeds, not the engine's queue or departure equations. Saturation is converted from vehicles per second to vehicles per 0.1-second simulator time unit.
 
-PointQ's finite-storage rule adjusts nominal running time by the unoccupied fraction of a link. Completed-trip delay uses the nominal route free-flow reference and is accompanied by network queue and exit rate. Unfinished vehicles remain in conservation checks. The initial queue-table plan can perform worse than forward progression, and profile updates are not uniformly beneficial. Identical plans yield identical simulations and are not independent evidence of separate benefits.
+PointQ's finite-storage rule adjusts nominal running time by the unoccupied fraction of a link. Completed-trip delay uses the nominal route free-flow reference and is accompanied by mean network queue and throughput. Unfinished vehicles remain in conservation checks. The initial-table optimum can perform worse than forward progression, and profile updates are not uniformly beneficial. Identical plans yield identical simulations and are not independent evidence of separate benefits.
 
 ## IBM Hardware
 
-The archive contains 17 completed `ibm_fez` jobs, 204 executions of 4096 shots each, 835584 shots and 525 measured quantum seconds. The main comparison uses fifteen jobs and 495 seconds. Two full-oracle precision jobs use thirty seconds. Native QPY circuits, initial/final physical layouts, raw bit strings, job IDs and calibration snapshots are included. Account and quota records are excluded.
+The archive contains 17 completed `ibm_fez` jobs, 204 executions of 4096 shots each, 835584 shots and 525 measured quantum seconds. The main comparison uses fifteen jobs and 495 seconds. Two full oracle precision jobs use thirty seconds. Native QPY circuits, initial/final physical layouts, raw bit strings, job IDs and calibration snapshots are included. Account and quota records are excluded.
 
 The 228 basis checks comprise 28 cost tests and 200 bit/phase tests. Bit tests initialise the flag at zero. Twelve main-suite seed-11 native circuits and all twelve precision-diagnostic circuits are verified noiselessly. The two coarse-cost cases preserve the corresponding fine-table minimum marked set. This agreement is instance-specific and does not preserve all cost rankings or every threshold predicate. RC3-C2's conflict gap falls from 4 at fine resolution to zero in its coarse hardware table, so that experiment preserves the optimum but not the directional conflict. Its three transpiler seeds produce two distinct initial placements, while B3-C2's produce one.
 

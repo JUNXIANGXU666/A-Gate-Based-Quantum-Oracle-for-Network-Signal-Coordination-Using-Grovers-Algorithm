@@ -8,6 +8,7 @@ from matplotlib import font_manager
 import numpy as np
 from scipy.stats import t
 from traffic_model import Scenario, link_delay
+from publication_terms import PLAN_LABELS, METHOD_LABELS, CIRCUIT_LABELS
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT/'manuscript/figures'
@@ -25,9 +26,7 @@ PURPLE, GOLD = '#7A3E65', '#9B7B20'
 PLAN_COLORS = [INK, GREEN, PURPLE]
 COLORS, STYLES, MARKERS = [INK, RED, BLUE], ['--', '-.', '-'], ['o', 's', '^']
 METHODS = ['random', 'coordinate', 'quantum_reference']
-METHOD_LABELS = ['Random sampling', 'Coordinate descent', 'Ideal adaptive Grover']
 PLANS = ['synchronised', 'progression', 'optimised']
-PLAN_LABELS = ['Equal offsets', 'Forward progression', 'Queue-table optimum']
 
 def read(path):
     return json.loads((ROOT/path).read_text(encoding='utf8'))
@@ -50,7 +49,7 @@ def legend(fig, ax):
 def networks():
     fig, axes = plt.subplots(2, 2, figsize=(6.5, 4.1), layout='constrained')
     for ax, family, title, letter in zip(axes.flat, ('unidirectional','bidirectional','ring','resco'),
-            ('Controlled one-way corridor (U4)','Controlled two-way corridor (B4)','Controlled two-way ring (R4)','Source road geometry (RC3)'), 'abcd'):
+            ('One-way corridor (U4)','Bidirectional corridor (B4)','Bidirectional ring (R4)','RESCO corridor projection (RC3)'), 'abcd'):
         positions = np.array([[0,.5],[1,.5],[2,.5],[3,.5]])
         if family == 'ring':
             positions = np.array([[.5,1.15],[2.5,1.15],[2.5,-.15],[.5,-.15]])
@@ -95,7 +94,8 @@ def networks():
         panel(ax,letter,title)
         ax.set(xlim=(-.3,3.3),ylim=(-.65,1.65),aspect='equal')
         if family=='bidirectional':
-            ax.text(1.5,-.25,'4 prescribed signals; synthetic travel times',ha='center',fontsize=7.5)
+            ax.text(0,.94,'B4: four signalised intersections\nSynthetic travel times',
+                    transform=ax.transAxes,ha='left',va='top',fontsize=7.5,linespacing=1.4)
         ax.axis('off')
     handles=[plt.Line2D([],[],color=BLUE,label='Forward movement'),plt.Line2D([],[],color=RED,label='Reverse movement')]
     fig.legend(handles=handles,loc='outside lower center',ncol=2,frameon=False)
@@ -169,7 +169,7 @@ def pointq():
                     errors.append(t.ppf(.975,7)*values.std(ddof=1)/np.sqrt(8))
                 positions=np.array(demands)+(.012*(2*pi-3) if row else 0)
                 axes[row,col].errorbar(positions,means,yerr=errors,color=PLAN_COLORS[pi],marker=MARKERS[pi],
-                    mfc='white' if pi==1 else PLAN_COLORS[pi],ls=STYLES[pi],ms=3.5,capsize=2,label=PLAN_LABELS[pi])
+                    mfc='white' if pi==1 else PLAN_COLORS[pi],ls=STYLES[pi],ms=3.5,capsize=2,label=PLAN_LABELS[plan])
         for row in range(3):
             panel(axes[row,col],chr(97+row*3+col),network)
             axes[row,col].set_xticks(demands,['0.65','1.00','1.35','1.55'])
@@ -180,7 +180,7 @@ def pointq():
         axes[0,col].set_yticks([15,30,60,120,240],['15','30','60','120','240'])
         axes[0,col].minorticks_off()
         axes[2,col].set_xlabel('Demand multiplier')
-    for row,label in enumerate(('Trip delay (s/veh, log scale)','Queue change (veh)','Exit-rate change (veh/h)')):
+    for row,label in enumerate(('Completed-trip delay\n(s/veh, log scale)','Mean network queue change (veh)','Throughput change (veh/h)')):
         axes[row,0].set_ylabel(label)
     grid(axes)
     legend(fig,axes[0,0])
@@ -195,7 +195,7 @@ def optimisation():
             traces=np.array([r['trace'] for r in record['runs'][method]])
             gap=(traces-record['minimum'])/record['minimum']*100
             x=np.arange(1,gap.shape[1]+1)
-            axes[0,col].plot(x,np.median(gap,axis=0),color=COLORS[i],ls=STYLES[i],label=METHOD_LABELS[i])
+            axes[0,col].plot(x,np.median(gap,axis=0),color=COLORS[i],ls=STYLES[i],label=METHOD_LABELS[method])
             axes[0,col].fill_between(x,np.quantile(gap,.25,axis=0),np.quantile(gap,.75,axis=0),color=COLORS[i],alpha=.10,lw=0)
         panel(axes[0,col],'ab'[col],f"{name}, {record['N']:,} assignments")
         axes[0,col].set(xlabel='Objective-oracle queries',ylabel='Gap to exact minimum (%)',xscale='log',xlim=(1,gap.shape[1]))
@@ -206,7 +206,7 @@ def optimisation():
     axes[1,0].set(xlabel='Offset assignments',ylabel='Recovery in 100 runs (%)',xscale='log',ylim=(-3,103))
     for i,method in enumerate(METHODS[:2]):
         axes[1,1].plot([v['N'] for v in scale],[1000*np.median([r['wall_seconds'] for r in v['runs'][method]]) for v in scale],color=COLORS[i],marker=MARKERS[i],ls=STYLES[i],ms=4)
-    axes[1,1].plot([v['N'] for v in scale],[1000*v['dp_seconds_median'] for v in scale],color=GREEN,marker='D',ms=4,label='Exact dynamic programming')
+    axes[1,1].plot([v['N'] for v in scale],[1000*v['dp_seconds_median'] for v in scale],color=GREEN,marker='D',ms=4,label=METHOD_LABELS['dynamic_programming'])
     panel(axes[1,1],'d','Classical computation')
     axes[1,1].set(xlabel='Offset assignments',ylabel='Measured wall time (ms)',xscale='log',yscale='log')
     axes[1,1].legend(loc='upper left',frameon=False,fontsize=7.5)
@@ -223,7 +223,7 @@ def quantum_verification():
         axes[0].plot(k,np.sin((2*k+1)*np.arcsin(np.sqrt(alpha)))**2,color=color,label=f'Feasible fraction {alpha:g}')
         data=[v for v in verification['amplification'] if v['alpha']==alpha]
         axes[0].plot([v['k'] for v in data],[v['observed'] for v in data],'o',mfc='white',mec=color,ms=5)
-    panel(axes[0],'a','Full-oracle noiseless verification')
+    panel(axes[0],'a','Noiseless verification of full oracle')
     axes[0].set(xlabel='Grover iterations',ylabel='Feasible-state probability',xticks=[0,1,2,3],ylim=(-.04,1.02))
     axes[0].legend(loc='upper center',bbox_to_anchor=(.5,-.25),frameon=False,fontsize=7.5)
     costs,_=register_costs(read('results/model/B3-C4.json'))
@@ -231,11 +231,11 @@ def quantum_verification():
     ideal=np.where(good,.78125/good.sum(),(1-.78125)/(16-good.sum()))
     rows=read('results/statistics/hardware.json')['rows']
     x=np.arange(16)
-    for route,color,shift,label in [('reversible',INK,-.18,'Full oracle'),('compiled',BLUE,.18,'Compiled phase')]:
+    for route,color,shift in [('reversible',INK,-.18),('compiled',BLUE,.18)]:
         observations=[r for r in rows if r['case']=='B3-C4' and r['route']==route and r['k']==1]
         shots=sum(sum(r['counts'].values()) for r in observations)
         values=[sum(r['counts'].get(format(j,'04b'),0) for r in observations)/shots for j in range(16)]
-        axes[1].bar(x+shift,values,.36,color=color,label=label)
+        axes[1].bar(x+shift,values,.36,color=color,label=CIRCUIT_LABELS[route])
     axes[1].plot(x,ideal,'D',color=RED,ms=3.5,label='Ideal')
     panel(axes[1],'b','IBM distribution, same marked states')
     axes[1].set(xlabel='Encoded assignment',ylabel='Probability',xticks=[0,3,6,9,12,15],ylim=(0,.42))
@@ -256,15 +256,15 @@ def hardware():
         axes[0].errorbar(x,y,xerr=[[x-record['two_qubit_gates'][0]],[record['two_qubit_gates'][1]-x]],
             yerr=[[y-record['excess_retention']['lo']],[record['excess_retention']['hi']-y]],
             color=RED if full else BLUE,marker='s' if full else 'o',capsize=2,ms=5)
-        labels=[(12500,-.08),(45000,.07),(62,.50),(210,.18),(650,.105),(6100,.03)]
-        axes[0].annotate(record['case']+(' full' if full else ''),(x,y),xytext=labels[index],textcoords='data',
+        labels=[(12500,-.08),(45000,.07),(150,.49),(210,.18),(650,.105),(6100,.03)]
+        axes[0].annotate(record['case']+('\n'+CIRCUIT_LABELS['reversible'] if full else ''),(x,y),xytext=labels[index],textcoords='data',
             ha='center',fontsize=7.5,
             arrowprops=dict(arrowstyle='-',lw=.5,color='.5'))
     axes[0].axhline(0,color=INK,lw=.8,ls='--')
     axes[0].set(xlabel='Transpiled two-qubit gates',ylabel='Excess-retention ratio',xscale='log',xlim=(25,110000),ylim=(-.12,.66))
     panel(axes[0],'a','Retention and circuit burden')
-    axes[0].plot([],[],'s',color=RED,label='Full reversible')
-    axes[0].plot([],[],'o',color=BLUE,label='Compiled phase')
+    axes[0].plot([],[],'s',color=RED,label=CIRCUIT_LABELS['reversible'])
+    axes[0].plot([],[],'o',color=BLUE,label=CIRCUIT_LABELS['compiled'])
     axes[0].legend(loc='upper right',frameon=False,fontsize=7.5)
     def paired_points(ax, row, identity, show_labels=False):
         for si,seed in enumerate((11,29,47)):
@@ -283,14 +283,14 @@ def hardware():
         paired_points(axes[1],row,identity,show_labels=row==0)
     axes[1].axvline(0,color=INK,lw=.8,ls='--')
     axes[1].set(xlabel='Paired probability increase',yticks=np.arange(5),
-        yticklabels=['B3-C2 full','B3-C4 full','B4-C4 compiled','B5-C4 compiled','B6-C4 compiled'],
+        yticklabels=[case+'\n'+CIRCUIT_LABELS[route] for case,route in near_baseline],
         ylim=(4.65,-.45),xlim=(-.04,.065),xticks=[-.04,-.02,0,.02,.04,.06])
     axes[1].tick_params(axis='y',labelsize=7.5)
     axes[1].tick_params(axis='x',labelsize=7)
     panel(axes[1],'b','Near-baseline cases (zoom)')
     paired_points(axes[2],0,('B3-C4','compiled'))
     axes[2].set(xlabel='Paired probability increase',yticks=[],ylim=(.65,-.45),xlim=(.18,.47),xticks=[.2,.3,.4])
-    panel(axes[2],'c','B3-C4 compiled')
+    panel(axes[2],'c','B3-C4, compiled phase oracle')
     axes[2].legend(*axes[1].get_legend_handles_labels(),loc='upper center',
         bbox_to_anchor=(.5,-.65),ncol=3,frameon=False,fontsize=7,handletextpad=.25,columnspacing=.9)
     save(fig,'fig7_hardware_boundary')
@@ -339,18 +339,17 @@ def traffic_extension():
     data=read('results/statistics/traffic_extension_paired.json')
     fig,axes=plt.subplots(2,2,figsize=(6.5,4.8),layout='constrained')
     demands=[.65,1,1.35,1.55]
-    plans=[('optimised',PURPLE,'^','Initial queue tables'),('propagated','#365F73','D','Updated profiles'),
-           ('bandwidth',GOLD,'s','Discrete bandwidth')]
+    plans=[('optimised',PURPLE,'^'),('propagated','#365F73','D'),('bandwidth',GOLD,'s')]
     for ax,family,letter in zip(axes.flat,('U4','B4','R4','RC3'),'abcd'):
-        for index,(plan,color,marker,label) in enumerate(plans):
+        for index,(plan,color,marker) in enumerate(plans):
             values=[next(v['difference']['completed_mean_delay'] for v in data
                          if v['case']==f'{family}-{load:g}' and v['plan']==plan and v['reference']=='progression') for load in demands]
             means=np.array([v['mean'] for v in values])
             errors=np.array([[v['mean']-v['lo'] for v in values],[v['hi']-v['mean'] for v in values]])
             ax.errorbar(np.array(demands)+(index-1)*.012,means,yerr=errors,color=color,
-                        marker=marker,ms=4,ls=['-', '--', ':'][index],capsize=2,label=label)
+                        marker=marker,ms=4,ls=['-', '--', ':'][index],capsize=2,label=PLAN_LABELS[plan])
         ax.axhline(0,color=INK,lw=.8,ls=':')
-        ax.set(xlabel='Demand multiplier',ylabel='Delay change from progression (s/veh)',
+        ax.set(xlabel='Demand multiplier',ylabel='Completed-trip delay change\nfrom forward progression (s/veh)',
                xticks=demands,xticklabels=['0.65','1.00','1.35','1.55'])
         panel(ax,letter,family if family!='RC3' else 'RC3: corridor projection')
     grid(axes)
